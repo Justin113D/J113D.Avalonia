@@ -147,10 +147,9 @@ namespace J113D.Avalonia.Utilities.IO
             return true;
         }
 
-        public void Clear()
+        public void ForgetFilePath()
         {
             LoadedFilePath = null;
-            FileChangeTracker?.ResetCurrentState();
         }
 
 
