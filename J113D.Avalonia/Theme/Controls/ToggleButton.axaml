@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+				   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				   x:ClassModifier="internal">
+	<Design.PreviewWith>
+		<Border Padding="20">
+			<StackPanel Spacing="20">
+				<ToggleButton Content="Click Me!" />
+				<ToggleButton Content="Disabled" IsEnabled="False" />
+				<ToggleButton Content="Three state" IsThreeState="True" />
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+
+	<ControlTheme x:Key="{x:Type ToggleButton}" TargetType="ToggleButton" BasedOn="{StaticResource {x:Type Button}}">
+		<Style Selector="^:checked">
+			<Setter Property="Foreground" Value="Black" />
+			<Setter Property="BorderBrush" Value="{DynamicResource PressedAccentColor}" />
+			<Setter Property="Background" Value="{DynamicResource AccentColor}"/>
+
+			<Style Selector="^:pointerover">
+				<Setter Property="Background" Value="{DynamicResource HighlightedAccentColor}" />
+			</Style>
+
+			<Style Selector="^:pressed">
+				<Setter Property="Background" Value="{DynamicResource PressedAccentColor}" />
+			</Style>
+
+			<Style Selector="^:disabled">
+				<Setter Property="Background" Value="{DynamicResource DisabledAccentColor}" />
+			</Style>
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

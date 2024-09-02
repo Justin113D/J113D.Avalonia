@@ -1,0 +1,56 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:converters="using:J113D.Avalonia.Converters"
+	x:ClassModifier="internal">
+
+	<ControlTheme x:Key="{x:Type TitleBar}" TargetType="TitleBar">
+
+		<Setter Property="VerticalAlignment" Value="Top" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="MinHeight" Value="30" />
+
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+					<Grid.Resources>
+						<converters:WindowIconToImageConverter x:Key="WindowIconToImageConverter"/>
+					</Grid.Resources>
+
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="auto"/>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="auto"/>
+					</Grid.ColumnDefinitions>
+
+					<Image
+						Grid.Column="0"
+						x:Name="PART_Icon"
+						IsHitTestVisible="False"
+						Width="24"
+						Height="24"
+						Margin="8 0"
+						HorizontalAlignment="Center"
+						VerticalAlignment="Center"
+						Source="{Binding $parent[Window].Icon, Converter={StaticResource WindowIconToImageConverter}}"
+						IsVisible="{Binding $parent[Window].Icon, Converter={x:Static ObjectConverters.IsNotNull}}"/>
+
+					<TextBlock
+						Grid.Column="1"
+						IsHitTestVisible="False"
+						Text="{Binding $parent[Window].Title}"
+						FontSize="18"
+						HorizontalAlignment="Center"
+						VerticalAlignment="Center"/>
+
+					<CaptionButtons x:Name="PART_CaptionButtons"
+						Grid.Column="2"
+						HorizontalAlignment="Right"
+						VerticalAlignment="Top"
+						Foreground="{TemplateBinding Foreground}" />
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
+</ResourceDictionary>

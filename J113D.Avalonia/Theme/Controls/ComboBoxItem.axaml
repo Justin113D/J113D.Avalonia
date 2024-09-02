@@ -1,0 +1,71 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+				   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				   x:ClassModifier="internal">
+	<Design.PreviewWith>
+		<Border Padding="16" Background="{DynamicResource BackgroundColor1}">
+			<StackPanel HorizontalAlignment="Stretch">
+				<ComboBoxItem>Item 1</ComboBoxItem>
+				<ComboBoxItem>Item 2 long</ComboBoxItem>
+				<ComboBoxItem IsSelected="True">Item 3</ComboBoxItem>
+				<ComboBoxItem IsEnabled="False">Item 4</ComboBoxItem>
+				<ComboBoxItem IsSelected="True" IsEnabled="False">Item 5</ComboBoxItem>
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+
+	<ControlTheme x:Key="{x:Type ComboBoxItem}" TargetType="ComboBoxItem">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="Padding" Value="8 4" />
+		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
+		<Setter Property="CornerRadius" Value="2"/>
+		
+		<Setter Property="Template">
+			<ControlTemplate>
+				<ContentPresenter 
+					Name="PART_ContentPresenter"
+					Foreground="{TemplateBinding Foreground}"
+					Background="{TemplateBinding Background}"
+					BorderBrush="{TemplateBinding BorderBrush}"
+					BorderThickness="{TemplateBinding BorderThickness}"
+					CornerRadius="{TemplateBinding CornerRadius}"
+					ContentTemplate="{TemplateBinding ContentTemplate}"
+					Content="{TemplateBinding Content}"
+					HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+					VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+					Padding="{TemplateBinding Padding}" />
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:pointerover">
+			<Setter Property="Background" Value="{DynamicResource HighlightedColor}" />
+			<Setter Property="Foreground" Value="{DynamicResource ForegroundColor1}" />
+		</Style>
+
+		<Style Selector="^:disabled">
+			<Setter Property="Foreground" Value="{DynamicResource ForegroundColor4}" />
+		</Style>
+
+		<Style Selector="^:pressed">
+			<Setter Property="Background" Value="{DynamicResource PressedColor}" />
+			<Setter Property="Foreground" Value="{DynamicResource ForegroundColor1}" />
+		</Style>
+
+		<!--  Selected state  -->
+		<Style Selector="^:selected">
+			<Setter Property="Background" Value="{DynamicResource AccentColor}" />
+			<Setter Property="Foreground" Value="Black" />
+			
+			<Style Selector="^:disabled">
+				<Setter Property="Background" Value="{DynamicResource DisabledAccentColor}" />
+			</Style>
+			
+			<Style Selector="^:pointerover">
+				<Setter Property="Background" Value="{DynamicResource HighlightedAccentColor}" />
+			</Style>
+			
+			<Style Selector="^:pressed">
+				<Setter Property="Background" Value="{DynamicResource PressedAccentColor}" />
+			</Style>
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

@@ -1,0 +1,128 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    x:ClassModifier="internal">
+	<Design.PreviewWith>
+		<Border Padding="20" Background="{DynamicResource BackgroundColor1}">
+			<StackPanel Spacing="20">
+				<CheckBox>Unchecked</CheckBox>
+				<CheckBox IsChecked="True">Checked</CheckBox>
+				<CheckBox IsEnabled="False">Disabled</CheckBox>
+				<CheckBox IsChecked="True" IsEnabled="False">Checked, Disabled</CheckBox>
+				<CheckBox Width="120">Checkbox should wrap its text</CheckBox>
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+
+	<StreamGeometry x:Key="CheckMarkPathData">M5.5 10.586 1.707 6.793A1 1 0 0 0 .293 8.207l4.5 4.5a1 1 0 0 0 1.414 0l11-11A1 1 0 0 0 15.793.293L5.5 10.586Z</StreamGeometry>
+
+	<ControlTheme x:Key="{x:Type CheckBox}" TargetType="CheckBox">
+		<Setter Property="Padding" Value="8,0,0,0" />
+		<Setter Property="HorizontalContentAlignment" Value="Left" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="MinHeight" Value="32" />
+
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid x:Name="RootGrid" ColumnDefinitions="auto,*">
+
+					<Border x:Name="NormalRectangle"
+							Background="{DynamicResource BackgroundColor4}"
+							VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+							CornerRadius="2"
+							Height="24"
+							Width="24">
+						<Viewbox Width="16" Height="16">
+							<Path x:Name="CheckGlyph"
+									Opacity="0"
+									Fill="Black"
+									Stretch="Uniform"
+									VerticalAlignment="Center"
+									FlowDirection="LeftToRight"
+									Data="{StaticResource CheckMarkPathData}"/>
+						</Viewbox>
+
+					</Border>
+
+					<ContentPresenter
+						x:Name="PART_ContentPresenter"
+						ContentTemplate="{TemplateBinding ContentTemplate}"
+						Content="{TemplateBinding Content}"
+						Margin="{TemplateBinding Padding}"
+						RecognizesAccessKey="True"
+						HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+						VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+						TextWrapping="Wrap"
+						Grid.Column="1" />
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+
+		<!-- Unchecked PointerOver State -->
+		<Style Selector="^:pointerover">
+
+			<Style Selector="^ /template/ Border#NormalRectangle">
+				<Setter Property="BorderThickness" Value="2"/>
+				<Setter Property="BorderBrush" Value="{DynamicResource BorderColor1}" />
+			</Style>
+		</Style>
+
+		<!-- Unchecked Pressed State -->
+		<Style Selector="^:pressed">
+			
+			<Style Selector="^ /template/ Border#NormalRectangle">
+				<Setter Property="BorderThickness" Value="2"/>
+				<Setter Property="BorderBrush" Value="{DynamicResource BorderColor2}" />
+				<Setter Property="Background" Value="{DynamicResource BackgroundColor4}" />
+			</Style>
+		</Style>
+
+		<!-- Unchecked Disabled state -->
+		<Style Selector="^:disabled">
+			<Setter Property="Foreground" Value="{DynamicResource ForegroundColor4}"/>
+				
+			<Style Selector="^ /template/ Border#NormalRectangle">
+				<Setter Property="Background" Value="{DynamicResource BackgroundColor2}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^:checked">
+			<Style Selector="^ /template/ Path#CheckGlyph">
+				<Setter Property="Opacity" Value="1" />
+			</Style>
+			
+			
+			<!-- Checked Normal State -->
+			<Style Selector="^ /template/ Border#NormalRectangle">
+				<Setter Property="Background" Value="{DynamicResource AccentColor}" />
+			</Style>
+
+
+			<!-- Checked PointerOver State -->
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ Border#NormalRectangle">
+					<Setter Property="BorderThickness" Value="2"/>
+					<Setter Property="BorderBrush" Value="{DynamicResource PressedAccentColor}" />
+					<Setter Property="Background" Value="{DynamicResource HighlightedAccentColor}" />
+				</Style>
+			</Style>
+
+			<!-- Checked Pressed State -->
+			<Style Selector="^:pressed">
+
+				<Style Selector="^ /template/ Border#NormalRectangle">
+					<Setter Property="Background" Value="{DynamicResource PressedAccentColor}" />
+				</Style>
+			</Style>
+
+			<!-- Checked Disabled State -->
+			<Style Selector="^:disabled">
+				<Setter Property="Foreground" Value="{DynamicResource ForegroundColor4}"/>
+
+				<Style Selector="^ /template/ Border#NormalRectangle">
+					<Setter Property="Background" Value="{DynamicResource DisabledAccentColor}" />
+				</Style>
+			</Style>
+		</Style>
+
+	</ControlTheme>
+</ResourceDictionary>

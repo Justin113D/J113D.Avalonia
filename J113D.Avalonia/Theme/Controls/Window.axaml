@@ -1,0 +1,67 @@
+<ResourceDictionary 
+	xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:ClassModifier="internal"
+	xmlns:converters="using:J113D.Avalonia.Converters">
+
+	<converters:PaddingBorderAdderConverter x:Key="PaddingBorderAdder"/>
+	<converters:NumberToThicknessConverter x:Key="NumberToThicknessConverter" Top="True"/>
+	
+	<ControlTheme x:Key="{x:Type Window}" TargetType="Window">
+		
+		<Setter Property="Background" Value="{DynamicResource BackgroundColor2}" />
+		<Setter Property="Padding" Value="4" />
+		<Setter Property="Margin" Value="0 4 0 0"/>
+		<Setter Property="CornerRadius" Value="3"/>
+		
+		<Setter Property="Foreground" Value="{DynamicResource ForegroundColor2}" />
+		<Setter Property="FontSize" Value="14" />
+
+		<Setter Property="Focusable" Value="True"/>
+		<Setter Property="ExtendClientAreaToDecorationsHint" Value="True"/>
+		<Setter Property="ExtendClientAreaChromeHints" Value="PreferSystemChrome"/>
+		<Setter Property="ExtendClientAreaTitleBarHeightHint" Value="-1"/>
+
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Panel>
+					
+					<Border 
+						Background="{TemplateBinding Background}"
+						CornerRadius="{TemplateBinding CornerRadius}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						IsHitTestVisible="False"/>
+					
+					<VisualLayerManager 
+						Margin="{TemplateBinding Converter={StaticResource PaddingBorderAdder}}" 
+						Padding="{Binding #PART_Titlebar.Height, Converter={StaticResource NumberToThicknessConverter}}" 
+						x:Name="VLM">
+						
+						<VisualLayerManager.ChromeOverlayLayer>
+							<TitleBar x:Name="PART_Titlebar"/>
+						</VisualLayerManager.ChromeOverlayLayer>
+
+
+						<Border x:Name="ContentPadding">
+							<ContentPresenter 
+								Name="PART_ContentPresenter"
+								Margin="{TemplateBinding Margin}"
+								HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+								VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+								Content="{TemplateBinding Content}"
+								ContentTemplate="{TemplateBinding ContentTemplate}" />
+						</Border>
+						
+					</VisualLayerManager>
+				</Panel>
+
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^[WindowState=Maximized] /template/ Border#ContentPadding">
+			<Setter Property="Margin" Value="8"/>
+		</Style>
+		
+	</ControlTheme>
+</ResourceDictionary>

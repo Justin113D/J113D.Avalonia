@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<AssemblyName>J113D.Avalonia</AssemblyName>
+		<RootNamespace>J113D.Avalonia</RootNamespace>
+	</PropertyGroup>
+	
+	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
+		<DebugType>embedded</DebugType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<AvaloniaResource Include="Icons\*.png" />
+		<AvaloniaResource Include="Utilities\MessageBox\Icons\*.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Avalonia" Version="11.1.3" />
+		<PackageReference Include="Avalonia.Desktop" Version="11.1.3" />
+		<PackageReference Include="Avalonia.Fonts.Inter" Version="11.1.3" />
+
+		<!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+		<PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.1.3" />
+	</ItemGroup>
+
+</Project>

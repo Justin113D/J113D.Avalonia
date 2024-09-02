@@ -1,0 +1,93 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+				   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				   x:ClassModifier="internal">
+	<Design.PreviewWith>
+		<Grid ColumnDefinitions="100,100">
+			<ThemeVariantScope RequestedThemeVariant="Light">
+				<Border Background="{DynamicResource BackgroundColor1}" Padding="0">
+					<ListBox Height="150">
+						<ListBoxItem IsEnabled="False">Disabled</ListBoxItem>
+						<ListBoxItem Padding="20">
+							Test
+						</ListBoxItem>
+						<ListBoxItem>Test</ListBoxItem>
+					</ListBox>
+				</Border>
+			</ThemeVariantScope>
+
+			<ThemeVariantScope Grid.Column="1" RequestedThemeVariant="Dark">
+				<Border Background="{DynamicResource BackgroundColor1}" Padding="0">
+					<ListBox Height="150">
+						<ListBoxItem IsEnabled="False">Disabled</ListBoxItem>
+						<ListBoxItem Padding="20">
+							Test
+						</ListBoxItem>
+						<ListBoxItem>Test</ListBoxItem>
+					</ListBox>
+				</Border>
+			</ThemeVariantScope>
+			
+		</Grid>
+	</Design.PreviewWith>
+	
+	<ControlTheme x:Key="{x:Type ListBoxItem}" TargetType="ListBoxItem">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="Padding" Value="12,9,12,12" />
+		
+		<Setter Property="Template">
+			<ControlTemplate>
+				<ContentPresenter 
+					Name="PART_ContentPresenter"
+					Background="{TemplateBinding Background}"
+					BorderBrush="{TemplateBinding BorderBrush}"
+					BorderThickness="{TemplateBinding BorderThickness}"
+					CornerRadius="{TemplateBinding CornerRadius}"
+					ContentTemplate="{TemplateBinding ContentTemplate}"
+					Content="{TemplateBinding Content}"
+					Padding="{TemplateBinding Padding}"
+					VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+					HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:disabled">
+			<Setter Property="Foreground" Value="{DynamicResource ForegroundColor4}" />
+		</Style>
+
+		<!--  PointerOver State  -->
+		<Style Selector="^:pointerover">
+			<Setter Property="Background" Value="{DynamicResource HighlightedColor}" />
+			<Setter Property="Foreground" Value="{DynamicResource ForegroundColor1}" />
+		</Style>
+
+		<!--  Pressed State  -->
+		<Style Selector="^:pressed">
+			<Setter Property="Background" Value="{DynamicResource PressedColor}" />
+			<Setter Property="Foreground" Value="{DynamicResource ForegroundColor1}" />
+		</Style>
+
+		<!--  Selected State  -->
+		<Style Selector="^:selected">
+
+			<Style Selector="^">
+				<Setter Property="Background" Value="{DynamicResource AccentColor}" />
+				<Setter Property="Foreground" Value="Black" />
+			</Style>
+
+			<!--  Selected Unfocused State  -->
+			<Style Selector="^:not(:focus)">
+				<Setter Property="Background" Value="{DynamicResource AccentColor}" />
+			</Style>
+
+			<!--  Selected PointerOver State  -->
+			<Style Selector="^:pointerover">
+				<Setter Property="Background" Value="{DynamicResource HighlightedAccentColor}" />
+			</Style>
+
+			<!--  Selected Pressed State  -->
+			<Style Selector="^:pressed">
+				<Setter Property="Background" Value="{DynamicResource PressedAccentColor}" />
+			</Style>
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

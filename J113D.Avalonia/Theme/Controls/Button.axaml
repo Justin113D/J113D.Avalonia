@@ -1,0 +1,173 @@
+<ResourceDictionary 
+	xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:ClassModifier="internal">
+	
+	<Design.PreviewWith>
+		<Grid ColumnDefinitions="*,*">
+			<ThemeVariantScope RequestedThemeVariant="Light">
+				<Border Padding="20" Background="{DynamicResource BackgroundColor1}">
+					<StackPanel Spacing="20">
+						<Button Content="Click Me!" />
+						<Button IsEnabled="False" Content="No Click :(" />
+
+						<Button Classes="Red" Content="Red" />
+						<Button Classes="Blue" Content="Blue" />
+						<Button Classes="Yellow" Content="Yellow" />
+						<Button Classes="Green" Content="Green" />
+					</StackPanel>
+				</Border>
+			</ThemeVariantScope>
+
+			<ThemeVariantScope RequestedThemeVariant="Dark" Grid.Column="1">
+				<Border Padding="20" Background="{DynamicResource BackgroundColor1}">
+					<StackPanel Spacing="20">
+						<Button Content="Click Me!" />
+						<Button IsEnabled="False" Content="No Click :(" />
+
+						<Button Classes="Red" Content="Red" />
+						<Button Classes="Blue" Content="Blue" />
+						<Button Classes="Yellow" Content="Yellow" />
+						<Button Classes="Green" Content="Green" />
+					</StackPanel>
+				</Border>
+			</ThemeVariantScope>
+		</Grid>
+	</Design.PreviewWith>
+
+	<ControlTheme x:Key="{x:Type Button}" TargetType="Button">
+		<Setter Property="Background" Value="{DynamicResource DefaultColor}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource PressedColor}" />
+		<Setter Property="CornerRadius" Value="2" />
+		<Setter Property="Padding" Value="8 5 8 6" />
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Panel>
+					<Border
+						Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						CornerRadius="{TemplateBinding CornerRadius}"/>
+
+					<ContentPresenter
+						x:Name="PART_ContentPresenter"
+						Content="{TemplateBinding Content}"
+						ContentTemplate="{TemplateBinding ContentTemplate}"
+						Padding="{TemplateBinding Padding}"
+						RecognizesAccessKey="True"
+						HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+						VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+
+
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:pointerover">
+			<Setter Property="Background" Value="{DynamicResource HighlightedColor}" />
+			<Setter Property="BorderThickness" Value="2" />
+			<Setter Property="CornerRadius" Value="1" />
+		</Style>
+
+		<Style Selector="^:pressed">
+			<Setter Property="Background" Value="{DynamicResource PressedColor}" />
+		</Style>
+
+		<Style Selector="^:disabled">
+			<Setter Property="Background" Value="{DynamicResource DisabledColor}" />
+			<Setter Property="Foreground" Value="{DynamicResource ForegroundColor3}" />
+		</Style>
+
+		<Style Selector="^.Red">
+			<Setter Property="Foreground" Value="Black"/>
+			<Setter Property="Background" Value="{DynamicResource RedColor}"/>
+			<Setter Property="BorderBrush" Value="{DynamicResource PressedRedColor}" />
+
+			<Style Selector="^:pointerover">
+				<Setter Property="Background" Value="{DynamicResource HighlightedRedColor}" />
+			</Style>
+
+			<Style Selector="^:pressed">
+				<Setter Property="Background" Value="{DynamicResource PressedRedColor}" />
+			</Style>
+
+			<Style Selector="^:disabled">
+				<Setter Property="Background" Value="{DynamicResource DisabledRedColor}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.Blue">
+			<Setter Property="Foreground" Value="Black"/>
+			<Setter Property="Background" Value="{DynamicResource BlueColor}"/>
+			<Setter Property="BorderBrush" Value="{DynamicResource PressedBlueColor}" />
+
+			<Style Selector="^:pointerover">
+				<Setter Property="Background" Value="{DynamicResource HighlightedBlueColor}" />
+			</Style>
+
+			<Style Selector="^:pressed">
+				<Setter Property="Background" Value="{DynamicResource PressedBlueColor}" />
+			</Style>
+
+			<Style Selector="^:disabled">
+				<Setter Property="Background" Value="{DynamicResource DisabledBlueColor}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.Green">
+			<Setter Property="Foreground" Value="Black"/>
+			<Setter Property="Background" Value="{DynamicResource GreenColor}"/>
+			<Setter Property="BorderBrush" Value="{DynamicResource PressedGreenColor}" />
+
+			<Style Selector="^:pointerover">
+				<Setter Property="Background" Value="{DynamicResource HighlightedGreenColor}" />
+			</Style>
+
+			<Style Selector="^:pressed">
+				<Setter Property="Background" Value="{DynamicResource PressedGreenColor}" />
+			</Style>
+
+			<Style Selector="^:disabled">
+				<Setter Property="Background" Value="{DynamicResource DisabledGreenColor}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.Yellow">
+			<Setter Property="Foreground" Value="Black"/>
+			<Setter Property="Background" Value="{DynamicResource YellowColor}"/>
+			<Setter Property="BorderBrush" Value="{DynamicResource PressedYellowColor}" />
+
+			<Style Selector="^:pointerover">
+				<Setter Property="Background" Value="{DynamicResource HighlightedYellowColor}" />
+			</Style>
+
+			<Style Selector="^:pressed">
+				<Setter Property="Background" Value="{DynamicResource PressedYellowColor}" />
+			</Style>
+
+			<Style Selector="^:disabled">
+				<Setter Property="Background" Value="{DynamicResource DisabledYellowColor}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.Accent">
+			<Setter Property="Foreground" Value="Black"/>
+			<Setter Property="Background" Value="{DynamicResource AccentColor}"/>
+			<Setter Property="BorderBrush" Value="{DynamicResource PressedAccentColor}" />
+
+			<Style Selector="^:pointerover">
+				<Setter Property="Background" Value="{DynamicResource HighlightedAccentColor}" />
+			</Style>
+
+			<Style Selector="^:pressed">
+				<Setter Property="Background" Value="{DynamicResource PressedAccentColor}" />
+			</Style>
+
+			<Style Selector="^:disabled">
+				<Setter Property="Background" Value="{DynamicResource DisabledAccentColor}" />
+			</Style>
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

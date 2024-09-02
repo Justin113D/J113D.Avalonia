@@ -1,0 +1,16 @@
+<Styles
+	x:Class="J113D.Avalonia.Theme.SCRTheme"
+	xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+	<Styles.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Accents/Base.axaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Styles.Resources>
+
+	<StyleInclude Source="avares://J113D.Avalonia/Theme/Controls/SCRControls.axaml" />
+</Styles>

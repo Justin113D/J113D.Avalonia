@@ -1,0 +1,251 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:conv="using:Avalonia.Controls.Converters"
+                    x:ClassModifier="internal">
+
+	<Design.PreviewWith>
+		<Grid ColumnDefinitions="250,250">
+			<ThemeVariantScope RequestedThemeVariant="Light" HorizontalAlignment="Left">
+				<Border Background="{DynamicResource BackgroundColor2}" Padding="20" Width="230">
+					<StackPanel Spacing="20" HorizontalAlignment="Left">
+						<MenuItem Header="_Standard"/>
+						<MenuItem IsSelected="True" Header="Selected"/>
+						<MenuItem Header="With Icon">
+							<MenuItem.Icon>
+								<TextBlock>😊</TextBlock>
+							</MenuItem.Icon>
+						</MenuItem>
+						<MenuItem Header="Input Gesture" InputGesture="Ctrl+G"/>
+						<MenuItem Header="Disabled" IsEnabled="False">
+							<MenuItem.Icon>
+								<TextBlock>😊</TextBlock>
+							</MenuItem.Icon>
+						</MenuItem>
+						<MenuItem Header="-"/>
+						<MenuItem Header="Parent" IsSubMenuOpen="True">
+							<MenuItem Header="Child 1"/>
+							<MenuItem Header="Child 2"/>
+							<MenuItem Header="Child 3"/>
+							<Separator/>
+							<MenuItem Header="Child 4" IsEnabled="False"/>
+							<MenuItem Header="Child 5" IsEnabled="False"/>
+							<MenuItem Header="Child 6"/>
+							<MenuItem Header="Child 7"/>
+							<MenuItem Header="Child 8"/>
+							<MenuItem Header="Child 9"/>
+							<MenuItem Header="Child 10"/>
+							<MenuItem Header="Child 11"/>
+							<MenuItem Header="Child 12"/>
+							<MenuItem Header="Child 13"/>
+							<MenuItem Header="Child 14"/>
+							<MenuItem Header="Child 15"/>
+							<MenuItem Header="Child 16"/>
+							<MenuItem Header="Child 17"/>
+							<MenuItem Header="Child 18"/>
+							<MenuItem Header="Child 19"/>
+						</MenuItem>
+						<MenuItem Header="Disabled Parent" IsEnabled="False">
+							<MenuItem Header="Child"/>
+						</MenuItem>
+					</StackPanel>
+				</Border>
+			</ThemeVariantScope>
+
+			<ThemeVariantScope RequestedThemeVariant="Dark" Grid.Column="1" HorizontalAlignment="Left">
+				<Border Background="{DynamicResource BackgroundColor2}" Padding="20" Width="230">
+					<StackPanel Spacing="20" HorizontalAlignment="Left">
+						<MenuItem Header="_Standard"/>
+						<MenuItem IsSelected="True" Header="Selected"/>
+						<MenuItem Header="With Icon">
+							<MenuItem.Icon>
+								<TextBlock>😊</TextBlock>
+							</MenuItem.Icon>
+						</MenuItem>
+						<MenuItem Header="Input Gesture" InputGesture="Ctrl+G"/>
+						<MenuItem Header="Disabled" IsEnabled="False">
+							<MenuItem.Icon>
+								<TextBlock>😊</TextBlock>
+							</MenuItem.Icon>
+						</MenuItem>
+						<MenuItem Header="-"/>
+						<MenuItem Header="Parent" IsSubMenuOpen="True">
+							<MenuItem Header="Child 1"/>
+							<MenuItem Header="Child 2"/>
+							<MenuItem Header="Child 3"/>
+							<Separator/>
+							<MenuItem Header="Child 4" IsEnabled="False"/>
+							<MenuItem Header="Child 5" IsEnabled="False"/>
+							<MenuItem Header="Child 6"/>
+							<MenuItem Header="Child 7"/>
+							<MenuItem Header="Child 8"/>
+							<MenuItem Header="Child 9"/>
+							<MenuItem Header="Child 10"/>
+							<MenuItem Header="Child 11"/>
+							<MenuItem Header="Child 12"/>
+							<MenuItem Header="Child 13"/>
+							<MenuItem Header="Child 14"/>
+							<MenuItem Header="Child 15"/>
+							<MenuItem Header="Child 16"/>
+							<MenuItem Header="Child 17"/>
+							<MenuItem Header="Child 18"/>
+							<MenuItem Header="Child 19"/>
+						</MenuItem>
+						<MenuItem Header="Disabled Parent" IsEnabled="False">
+							<MenuItem Header="Child"/>
+						</MenuItem>
+					</StackPanel>
+				</Border>
+			</ThemeVariantScope>
+		</Grid>
+	</Design.PreviewWith>
+
+	<conv:PlatformKeyGestureConverter x:Key="KeyGestureConverter" />
+	<StreamGeometry x:Key="MenuItemChevronPathData">M 1,0 10,10 l -9,10 -1,-1 L 8,10 -0,1 Z</StreamGeometry>
+
+	<ControlTheme x:Key="MenuItemIconTheme" TargetType="ContentControl">
+		<Setter Property="Width" Value="16" />
+		<Setter Property="Height" Value="16" />
+
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Viewbox
+					StretchDirection="DownOnly"
+					HorizontalAlignment="Center"
+					VerticalAlignment="Center">
+					<ContentPresenter x:Name="PART_ContentPresenter" Content="{TemplateBinding Content}" />
+				</Viewbox>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
+	<ControlTheme x:Key="{x:Type MenuItem}" TargetType="MenuItem">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="Padding" Value="6 4" />
+		<Setter Property="CornerRadius" Value="1"/>
+
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Panel>
+					<Border Name="PART_LayoutRoot"
+							Padding="{TemplateBinding Padding}"
+							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="{TemplateBinding CornerRadius}">
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto" SharedSizeGroup="MenuItemIcon" />
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="Auto" SharedSizeGroup="MenuItemIGT" />
+								<ColumnDefinition Width="Auto" SharedSizeGroup="MenuItemChevron" />
+							</Grid.ColumnDefinitions>
+
+							<ContentControl Grid.Column="0"
+											x:Name="PART_IconPresenter"
+											IsVisible="False"
+											Theme="{StaticResource MenuItemIconTheme}"
+											Content="{TemplateBinding Icon}"
+											Margin="0 0 4 0" />
+
+							<ContentPresenter Name="PART_HeaderPresenter"
+											  Content="{TemplateBinding Header}"
+											  ContentTemplate="{TemplateBinding HeaderTemplate}"
+											  VerticalAlignment="Center"
+											  HorizontalAlignment="Stretch"
+											  RecognizesAccessKey="True"
+											  Grid.Column="1"/>
+
+							<TextBlock x:Name="PART_InputGestureText"
+									   Grid.Column="2"
+									   Margin="8 0 0 0"
+									   Text="{TemplateBinding InputGesture, Converter={StaticResource KeyGestureConverter}}"
+									   HorizontalAlignment="Right"
+									   VerticalAlignment="Center"
+									   Foreground="{DynamicResource ForegroundColor3}"/>
+
+							<Path Name="PART_ChevronPath"
+								  Stretch="Uniform"
+								  Width="8"
+								  Height="16"
+								  Data="{StaticResource MenuItemChevronPathData}"
+								  Fill="{DynamicResource AccentColor}"
+								  Margin="8 0 0 0"
+								  VerticalAlignment="Center"
+								  Grid.Column="3" />
+						</Grid>
+					</Border>
+
+					<Popup Name="PART_Popup"
+						   WindowManagerAddShadowHint="False"
+						   Placement="RightEdgeAlignedTop"
+						   HorizontalOffset="-2"
+						   IsLightDismissEnabled="False"
+						   IsOpen="{TemplateBinding IsSubMenuOpen, Mode=TwoWay}">
+
+						<Border Background="{DynamicResource BackgroundColor2}"
+								BorderBrush="{DynamicResource BorderColor2}"
+								BorderThickness="1"
+								HorizontalAlignment="Stretch"
+								CornerRadius="2">
+
+							<ScrollViewer>
+
+								<ItemsPresenter
+									Name="PART_ItemsPresenter"
+									ItemsPanel="{TemplateBinding ItemsPanel}"
+									Grid.IsSharedSizeScope="True"/>
+							</ScrollViewer>
+						</Border>
+					</Popup>
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:icon /template/ ContentControl#PART_IconPresenter">
+			<Setter Property="IsVisible" Value="True" />
+		</Style>
+				
+		<Style Selector="^:pointerover /template/ Border#PART_LayoutRoot:pointerover">
+			<Setter Property="Background" Value="{DynamicResource HighlightedColor}" />
+		</Style>
+		
+		<Style Selector="^:selected /template/ Border#PART_LayoutRoot">
+			<Setter Property="Background" Value="{DynamicResource SelectedColor}" />
+		</Style>
+
+		<!--  Listen for PART_LayoutRoot:pointerover, so it will not be triggered when subitem is pressed  -->
+		<Style Selector="^:pressed /template/ Border#PART_LayoutRoot:pointerover">
+			<Setter Property="Background" Value="{DynamicResource PressedColor}" />
+		</Style>
+
+		<Style Selector="^:disabled">
+			<Setter Property="Foreground" Value="{DynamicResource ForegroundColor4}"/>
+			
+			<Style Selector="^ /template/ TextBlock#PART_InputGestureText">
+				<Setter Property="Foreground" Value="{DynamicResource ForegroundColor4}" />
+			</Style>
+			
+			<Style Selector="^ /template/ Path#PART_ChevronPath">
+				<Setter Property="Fill" Value="{DynamicResource ForegroundColor4}" />
+			</Style>
+
+			<Style Selector="^ /template/ ContentControl#PART_IconPresenter">
+				<Setter Property="Opacity" Value="0.3"/>
+			</Style>
+			
+		</Style>
+
+		<Style Selector="^:empty /template/ Path#PART_ChevronPath">
+			<Setter Property="IsVisible" Value="False" />
+		</Style>
+
+		<Style Selector="^:separator">
+			<Setter Property="Template">
+				<ControlTemplate>
+					<Separator/>
+				</ControlTemplate>
+			</Setter>
+		</Style>
+
+	</ControlTheme>
+</ResourceDictionary>

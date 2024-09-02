@@ -1,0 +1,54 @@
+<Styles 
+	xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<Styles.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/ItemsControl.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/FlyoutPresenter.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/MenuFlyoutPresenter.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/HeaderedContentControl.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/PopupRoot.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/ThemeVariantScope.axaml" />
+				
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/ScrollBar.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/ScrollViewer.axaml" />
+				
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/PathIcon.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/ToolTip.axaml" />
+				
+				<!-- //////////////////// -->
+				
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/Menu.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/MenuItem.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/Separator.axaml" />
+
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/ListBox.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/ListBoxItem.axaml" />
+
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/TreeView.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/TreeViewItem.axaml" />
+
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/ComboBox.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/ComboBoxItem.axaml" />
+				
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/Button.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/RepeatButton.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/ToggleButton.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/CheckBox.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/GridSplitter.axaml" />
+				
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/Label.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/TextBox.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/SelectableTextBlock.axaml" />
+
+				<!-- //////////////////// -->
+				
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/CaptionButtons.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/TitleBar.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/Window.axaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Styles.Resources>
+</Styles>

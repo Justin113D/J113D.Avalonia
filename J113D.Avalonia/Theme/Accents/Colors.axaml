@@ -1,0 +1,79 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<Design.PreviewWith>
+		<ThemeVariantScope RequestedThemeVariant="Light">
+			<Border Padding="8">
+				<Border.Styles>
+					<Style Selector="TextBlock">
+						<Setter Property="FontWeight" Value="Medium"/>
+						<Setter Property="FontSize" Value="20"/>
+						<Setter Property="Margin" Value="8, 0, 12, 0"/>
+						<Setter Property="VerticalAlignment" Value="Center"/>
+					</Style>
+				</Border.Styles>
+
+				<Grid RowDefinitions="80,10,80,10,80,10,80" ColumnDefinitions="auto,80,80,80,80">
+					<TextBlock Text="Red" />
+					<TextBlock Text="Blue" Grid.Row="2" />
+					<TextBlock Text="Green" Grid.Row="4"/>
+					<TextBlock Text="Yellow" Grid.Row="6"  />
+
+
+					<Border Grid.Row="0" Grid.Column="1" Background="{StaticResource RedColor}"/>
+					<Border Grid.Row="0" Grid.Column="2" Background="{StaticResource HighlightedRedColor}"/>
+					<Border Grid.Row="0" Grid.Column="3" Background="{StaticResource PressedRedColor}"/>
+					<Border Grid.Row="0" Grid.Column="4" Background="{StaticResource DisabledRedColor}"/>
+
+					<Border Grid.Row="2" Grid.Column="1" Background="{StaticResource BlueColor}"/>
+					<Border Grid.Row="2" Grid.Column="2" Background="{StaticResource HighlightedBlueColor}"/>
+					<Border Grid.Row="2" Grid.Column="3" Background="{StaticResource PressedBlueColor}"/>
+					<Border Grid.Row="2" Grid.Column="4" Background="{StaticResource DisabledBlueColor}"/>
+
+					<Border Grid.Row="4" Grid.Column="1" Background="{StaticResource GreenColor}"/>
+					<Border Grid.Row="4" Grid.Column="2" Background="{StaticResource HighlightedGreenColor}"/>
+					<Border Grid.Row="4" Grid.Column="3" Background="{StaticResource PressedGreenColor}"/>
+					<Border Grid.Row="4" Grid.Column="4" Background="{StaticResource DisabledGreenColor}"/>
+
+					<Border Grid.Row="6" Grid.Column="1" Background="{StaticResource YellowColor}"/>
+					<Border Grid.Row="6" Grid.Column="2" Background="{StaticResource HighlightedYellowColor}"/>
+					<Border Grid.Row="6" Grid.Column="3" Background="{StaticResource PressedYellowColor}"/>
+					<Border Grid.Row="6" Grid.Column="4" Background="{StaticResource DisabledYellowColor}"/>
+				</Grid>
+			</Border>
+		</ThemeVariantScope>
+	</Design.PreviewWith>
+
+
+	<!-- Red Colors-->
+
+	<Color x:Key="RedColor">#EF233F</Color>
+	<Color x:Key="TransparentRedColor">#00EF233F</Color>
+	<Color x:Key="HighlightedRedColor">#FF3F5C</Color>
+	<Color x:Key="PressedRedColor">#C9001E</Color>
+	<Color x:Key="DisabledRedColor">#9B2033</Color>
+
+	<!-- Blue Colors-->
+
+	<Color x:Key="BlueColor">#55ACEE</Color>
+	<Color x:Key="TransparentBlueColor">#0055ACEE</Color>
+	<Color x:Key="HighlightedBlueColor">#6DC2FF</Color>
+	<Color x:Key="PressedBlueColor">#288CD3</Color>
+	<Color x:Key="DisabledBlueColor">#3F647F</Color>
+
+	<!-- Green Colors -->
+
+	<Color x:Key="GreenColor">#78B14E</Color>
+	<Color x:Key="TransparentGreenColor">#0078B14E</Color>
+	<Color x:Key="HighlightedGreenColor">#95CE69</Color>
+	<Color x:Key="PressedGreenColor">#5D9B2E</Color>
+	<Color x:Key="DisabledGreenColor">#647F4F</Color>
+
+	<!-- Yellow Colors-->
+
+	<Color x:Key="YellowColor">#FFB800</Color>
+	<Color x:Key="TransparentYellowColor">#00FFB800</Color>
+	<Color x:Key="HighlightedYellowColor">#FFCE54</Color>
+	<Color x:Key="PressedYellowColor">#F29500</Color>
+	<Color x:Key="DisabledYellowColor">#B77E28</Color>
+</ResourceDictionary>

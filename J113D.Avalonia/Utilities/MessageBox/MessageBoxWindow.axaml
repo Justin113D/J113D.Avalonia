@@ -1,0 +1,99 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="using:J113D.Avalonia.MessageBox"
+		xmlns:accent="using:J113D.Avalonia.Theme.Accents"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="J113D.Avalonia.MessageBox.MessageBoxWindow"
+		MinWidth="240"
+		MinHeight="120"
+		MaxWidth="500"
+		SizeToContent="WidthAndHeight"
+		BorderThickness="3"
+		CanResize="False"
+		WindowStartupLocation="CenterOwner">
+
+	<Window.Styles>
+
+		<Style Selector="TitleBar /template/ CaptionButtons">
+			<Setter Property="IsVisible" Value="False"/>
+		</Style>
+
+		<!-- Icons -->
+
+		<Style Selector="Window">
+			
+			<Style Selector="^.Question">
+				<Setter Property="Icon" Value="avares://J113D.Avalonia/Utilities/MessageBox/Icons/Question.png"/>
+				<Setter Property="BorderBrush" Value="{StaticResource BlueColor}"/>
+			</Style>
+
+			<Style Selector="^.Warning">
+				<Setter Property="Icon" Value="avares://J113D.Avalonia/Utilities/MessageBox/Icons/Warning.png"/>
+				<Setter Property="BorderBrush" Value="{StaticResource YellowColor}"/>
+			</Style>
+
+			<Style Selector="^.Error">
+				<Setter Property="Icon" Value="avares://J113D.Avalonia/Utilities/MessageBox/Icons/Error.png"/>
+				<Setter Property="BorderBrush" Value="{StaticResource RedColor}"/>
+			</Style>
+
+			<Style Selector="^.Info">
+				<Setter Property="Icon" Value="avares://J113D.Avalonia/Utilities/MessageBox/Icons/Info.png"/>
+				<Setter Property="BorderBrush" Value="{StaticResource BlueColor}"/>
+			</Style>
+			
+			<!-- Buttons-->
+
+			<Style Selector="^ Button">
+				<Setter Property="IsVisible" Value="False"/>
+				<Setter Property="MinWidth" Value="80"/>
+				<Setter Property="Padding" Value="12 4"/>
+				<Setter Property="HorizontalContentAlignment" Value="Center"/>
+			</Style>
+
+			<Style Selector="^.Ok Button#OkButton,
+							 ^.OkCancel Button#OkButton, 
+							 ^.OkAbort Button#OkButton, 
+							 
+							 ^.YesNo Button#YesButton, 
+							 ^.YesNoCancel Button#YesButton, 
+							 ^.YesNoAbort Button#YesButton, 
+							 
+							 ^.YesNo Button#NoButton,
+							 ^.YesNoCancel Button#NoButton, 
+							 ^.YesNoAbort Button#NoButton, 
+							 
+							 ^.OkCancel Button#CancelButton,
+							 ^.YesNoCancel Button#CancelButton,
+							 
+							 ^.OkAbort Button#AbortButton,
+							 ^.YesNoAbort Button#AbortButton">
+				
+				<Setter Property="IsVisible" Value="True"/>
+			</Style>
+		</Style>
+	</Window.Styles>
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="auto"/>
+		</Grid.RowDefinitions>
+
+		<Border Grid.Row="0" Background="{DynamicResource BackgroundColor1}" CornerRadius="3" Padding="8">
+			<SelectableTextBlock Grid.Row="0" Padding="4" x:Name="MessageText" VerticalAlignment="Center" TextWrapping="Wrap"/>
+		</Border>
+
+		<StackPanel Grid.Row="1" Margin="0 4 0 0" Orientation="Horizontal" Spacing="5" HorizontalAlignment="Right">
+			<Button x:Name="OkButton" Content="Ok" Click="OnOk"/>
+			<Button x:Name="YesButton" Content="Yes" Click="OnYes"/>
+			<Button x:Name="NoButton" Content="No" Click="OnNo"/>
+			<Button x:Name="CancelButton" Content="Cancel" Click="OnCancel"/>
+			<Button x:Name="AbortButton" Content="Abort" Click="OnAbort"/>
+		</StackPanel>
+	</Grid>
+
+
+</Window>

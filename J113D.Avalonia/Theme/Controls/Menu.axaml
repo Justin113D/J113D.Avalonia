@@ -1,0 +1,121 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:ClassModifier="internal">
+
+	<Design.PreviewWith>
+		<StackPanel>
+			<ThemeVariantScope RequestedThemeVariant="Light">
+				<Border Background="{DynamicResource BackgroundColor2}" Padding="8">
+					<Menu>
+						<MenuItem Header="_Standard" />
+						<MenuItem Header="Selected" IsSelected="True" />
+						<MenuItem Header="Disabled" IsEnabled="False" />
+					</Menu>
+				</Border>
+			</ThemeVariantScope>
+			<ThemeVariantScope RequestedThemeVariant="Dark">
+				<Border Background="{DynamicResource BackgroundColor2}" Padding="8">
+					<Menu>
+						<MenuItem Header="_Standard" />
+						<MenuItem Header="Selected" IsSelected="True" />
+						<MenuItem Header="Disabled" IsEnabled="False" />
+					</Menu>
+				</Border>
+			</ThemeVariantScope>
+		</StackPanel>
+	</Design.PreviewWith>
+
+	<ControlTheme x:Key="TopLevelMenuItem" TargetType="MenuItem">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="CornerRadius" Value="2" />
+		<Setter Property="Padding" Value="7,3,7,4" />
+		
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border Name="PART_LayoutRoot"
+					Background="{TemplateBinding Background}"
+					BorderBrush="{TemplateBinding BorderBrush}"
+					BorderThickness="{TemplateBinding BorderThickness}"
+					CornerRadius="{TemplateBinding CornerRadius}">
+					
+					<Panel>
+						<ContentPresenter  Name="PART_HeaderPresenter"
+							Content="{TemplateBinding Header}"
+							ContentTemplate="{TemplateBinding HeaderTemplate}"
+							VerticalAlignment="Center"
+							HorizontalAlignment="Stretch"
+							RecognizesAccessKey="True"
+							Margin="{TemplateBinding Padding}"/>
+						
+						<Popup Name="PART_Popup"
+							   WindowManagerAddShadowHint="False"
+							   MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"
+							   IsLightDismissEnabled="True"
+							   IsOpen="{TemplateBinding IsSubMenuOpen, Mode=TwoWay}"
+							   Placement="BottomEdgeAlignedLeft"
+							   OverlayInputPassThroughElement="{Binding $parent[Menu]}">
+							
+							<Border
+								Background="{DynamicResource BackgroundColor2}"
+								BorderBrush="{DynamicResource BorderColor2}"
+								BorderThickness="1"
+								HorizontalAlignment="Stretch"
+								CornerRadius="2">
+								
+								<ItemsPresenter Name="PART_ItemsPresenter"
+												ItemsPanel="{TemplateBinding ItemsPanel}"
+												Grid.IsSharedSizeScope="True" />
+							</Border>
+						</Popup>
+					</Panel>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:selected /template/ Border#PART_LayoutRoot">
+			<Setter Property="Background" Value="{DynamicResource SelectedColor}" />
+		</Style>
+
+		<Style Selector="^:pressed /template/ Border#PART_LayoutRoot:pointerover">
+			<Setter Property="Background" Value="{DynamicResource PressedColor}" />
+		</Style>
+
+		<Style Selector="^:disabled">
+			<Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
+				<Setter Property="Foreground" Value="{DynamicResource ForegroundColor3}" />
+			</Style>
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme x:Key="{x:Type Menu}" TargetType="Menu">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="ItemContainerTheme" Value="{StaticResource TopLevelMenuItem}" />
+
+		<Setter Property="ItemsPanel">
+			<ItemsPanelTemplate>
+				<StackPanel Orientation="Horizontal" Spacing="3"/>
+			</ItemsPanelTemplate>
+		</Setter>
+		
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border 
+					Background="{TemplateBinding Background}"
+					BorderBrush="{TemplateBinding BorderBrush}"
+					BorderThickness="{TemplateBinding BorderThickness}"
+					CornerRadius="{TemplateBinding CornerRadius}"
+					HorizontalAlignment="Stretch"
+					Padding="{TemplateBinding Padding}">
+
+					<ItemsPresenter
+						Name="PART_ItemsPresenter"
+						ItemsPanel="{TemplateBinding ItemsPanel}"
+						VerticalAlignment="Stretch"
+						KeyboardNavigation.TabNavigation="Continue"/>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+		
+	</ControlTheme>
+</ResourceDictionary>

@@ -1,0 +1,139 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="using:J113D.Avalonia.Theme.Accents"
+	x:ClassModifier="internal">
+
+	<Design.PreviewWith>
+		<ThemeVariantScope RequestedThemeVariant="Dark">
+			<Border Padding="8" Background="Magenta">
+				<Border.Styles>
+					<Style Selector="TextBlock">
+						<Setter Property="FontWeight" Value="Medium"/>
+						<Setter Property="FontSize" Value="20"/>
+						<Setter Property="Margin" Value="8, 0, 12, 0"/>
+						<Setter Property="VerticalAlignment" Value="Center"/>
+					</Style>
+				</Border.Styles>
+
+				<Grid RowDefinitions="80,10,80,10,40,40,10,40,40,40,10,40,40" ColumnDefinitions="auto,80,80,80,80,80,80">
+					<TextBlock Text="Background" />
+					<TextBlock Text="Border" Grid.Row="2" />
+					<TextBlock Text="Foreground" Grid.Row="4" Grid.RowSpan="2" />
+					<TextBlock Text="Base Button" Grid.Row="6" Grid.RowSpan="3" />
+					<TextBlock Text="Accent Button" Grid.Row="10" Grid.RowSpan="2" />
+
+
+					<Border Grid.Row="0" Grid.Column="1" Background="{StaticResource BackgroundColor1}"/>
+					<Border Grid.Row="0" Grid.Column="2" Background="{StaticResource BackgroundColor2}"/>
+					<Border Grid.Row="0" Grid.Column="3" Background="{StaticResource BackgroundColor3}"/>
+					<Border Grid.Row="0" Grid.Column="4" Background="{StaticResource BackgroundColor4}"/>
+					<Border Grid.Row="0" Grid.Column="5" Background="{StaticResource BackgroundColor5}"/>
+					<Border Grid.Row="0" Grid.Column="6" Background="{StaticResource BackgroundColor6}"/>
+
+					<Border Grid.Row="2" Grid.Column="1" Background="{StaticResource BackgroundColor1}" Padding="8">
+						<Border BorderBrush="{StaticResource BorderColor1}" BorderThickness="4"/>
+					</Border>
+					<Border Grid.Row="2" Grid.Column="2" Background="{StaticResource BackgroundColor2}" Padding="8">
+						<Border BorderBrush="{StaticResource BorderColor2}" BorderThickness="4"/>
+					</Border>
+					<Border Grid.Row="2" Grid.Column="3" Background="{StaticResource BackgroundColor3}" Padding="8">
+						<Border BorderBrush="{StaticResource BorderColor3}" BorderThickness="4"/>
+					</Border>
+					<Border Grid.Row="2" Grid.Column="4" Background="{StaticResource BackgroundColor4}" Padding="8">
+						<Border BorderBrush="{StaticResource BorderColor4}" BorderThickness="4"/>
+					</Border>
+					<Border Grid.Row="2" Grid.Column="5" Background="{StaticResource BackgroundColor5}" Padding="8">
+						<Border BorderBrush="{StaticResource BorderColor5}" BorderThickness="4"/>
+					</Border>
+					<Border Grid.Row="2" Grid.Column="6" Background="{StaticResource BackgroundColor6}" Padding="8">
+						<Border BorderBrush="{StaticResource BorderColor6}" BorderThickness="4"/>
+					</Border>
+
+					<Border Grid.Row="4" Grid.Column="1" Background="{StaticResource ForegroundColor1}"/>
+					<Border Grid.Row="4" Grid.Column="2" Background="{StaticResource ForegroundColor2}"/>
+					<Border Grid.Row="4" Grid.Column="3" Background="{StaticResource ForegroundColor3}"/>
+					<Border Grid.Row="4" Grid.Column="4" Background="{StaticResource ForegroundColor4}"/>
+
+					<Border Grid.Row="5" Grid.Column="1" Background="{DynamicResource BackgroundColor1}">
+						<TextBlock Foreground="{StaticResource ForegroundColor1}" Text="ABC" TextAlignment="Center"/>
+					</Border>
+					<Border Grid.Row="5" Grid.Column="2" Background="{DynamicResource BackgroundColor1}">
+						<TextBlock Foreground="{StaticResource ForegroundColor2}" Text="ABC" TextAlignment="Center"/>
+					</Border>
+					<Border Grid.Row="5" Grid.Column="3" Background="{DynamicResource BackgroundColor1}">
+						<TextBlock Foreground="{StaticResource ForegroundColor3}" Text="ABC" TextAlignment="Center"/>
+					</Border>
+					<Border Grid.Row="5" Grid.Column="4" Background="{DynamicResource BackgroundColor1}">
+						<TextBlock Foreground="{StaticResource ForegroundColor4}" Text="ABC" TextAlignment="Center"/>
+					</Border>
+
+					<Border Grid.Row="4" Grid.Column="6" Background="{DynamicResource FieldColor}" CornerRadius="2">
+						<TextBlock Foreground="{StaticResource ForegroundColor2}" Text="ABC" TextAlignment="Center"/>
+					</Border>
+					<Border Grid.Row="5" Grid.Column="6" Background="{DynamicResource HighlightedFieldColor}" CornerRadius="2">
+						<TextBlock Foreground="{StaticResource ForegroundColor1}" Text="ABC" TextAlignment="Center"/>
+					</Border>
+
+					<Button Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="6"/>
+
+					<Border Grid.Row="8" Grid.Column="1" Background="{StaticResource DefaultColor}"/>
+					<Border Grid.Row="8" Grid.Column="2" Background="{StaticResource HighlightedColor}"/>
+					<Border Grid.Row="8" Grid.Column="3" Background="{StaticResource PressedColor}"/>
+					<Border Grid.Row="8" Grid.Column="4" Background="{StaticResource SelectedColor}"/>
+					<Border Grid.Row="8" Grid.Column="5" Background="{StaticResource DisabledColor}"/>
+
+					<Button Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="6">
+						<Button.Styles>
+							<Style Selector="Button">
+								<Setter Property="Background" Value="{DynamicResource SelectedColor}"/>
+							</Style>
+						</Button.Styles>
+					</Button>
+
+					<Button Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="6" Classes="Accent"/>
+
+					<Border Grid.Row="12" Grid.Column="1" Background="{StaticResource AccentColor}"/>
+					<Border Grid.Row="12" Grid.Column="2" Background="{StaticResource HighlightedAccentColor}"/>
+					<Border Grid.Row="12" Grid.Column="3" Background="{StaticResource PressedAccentColor}"/>
+					<Border Grid.Row="12" Grid.Column="4" Background="{StaticResource DisabledAccentColor}"/>
+
+				</Grid>
+			</Border>
+		</ThemeVariantScope>
+	</Design.PreviewWith>
+
+	<Color x:Key="BackgroundColor1">#444</Color>
+	<Color x:Key="BackgroundColor2">#383838</Color>
+	<Color x:Key="BackgroundColor3">#333</Color>
+	<Color x:Key="BackgroundColor4">#282828</Color>
+	<Color x:Key="BackgroundColor5">#222</Color>
+	<Color x:Key="BackgroundColor6">#181818</Color>
+
+	<Color x:Key="BorderColor1">#AAA</Color>
+	<Color x:Key="BorderColor2">#888</Color>
+	<Color x:Key="BorderColor3">#666</Color>
+	<Color x:Key="BorderColor4">#555</Color>
+	<Color x:Key="BorderColor5">#444</Color>
+	<Color x:Key="BorderColor6">#333</Color>
+
+	<Color x:Key="ForegroundColor1">#FFF</Color>
+	<Color x:Key="ForegroundColor2">#EEE</Color>
+	<Color x:Key="ForegroundColor3">#999</Color>
+	<Color x:Key="ForegroundColor4">#777</Color>
+
+	<Color x:Key="DefaultColor">#686868</Color>
+	<Color x:Key="HighlightedColor">#888</Color>
+	<Color x:Key="PressedColor">#5C5C5C</Color>
+	<Color x:Key="SelectedColor">#707070</Color>
+	<Color x:Key="DisabledColor">#505050</Color>
+	
+	<Color x:Key="FieldColor">#282828</Color>
+	<Color x:Key="HighlightedFieldColor">#333</Color>
+	<Color x:Key="DisabledFieldColor">#202020</Color>
+
+	<StaticResource x:Key="AccentColor" ResourceKey="YellowColor"/>
+	<StaticResource x:Key="HighlightedAccentColor" ResourceKey="HighlightedYellowColor"/>
+	<StaticResource x:Key="PressedAccentColor" ResourceKey="PressedYellowColor"/>
+	<StaticResource x:Key="DisabledAccentColor" ResourceKey="DisabledYellowColor"/>
+</ResourceDictionary>

@@ -1,0 +1,216 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    x:ClassModifier="internal">
+
+	<Design.PreviewWith>
+		<StackPanel>
+			<ThemeVariantScope RequestedThemeVariant="Dark">
+				<Border Padding="20" Background="{DynamicResource BackgroundColor1}">
+					<StackPanel Orientation="Horizontal" Spacing="20">
+						<StackPanel Spacing="20">
+							<ScrollBar Orientation="Horizontal" AllowAutoHide="False" VerticalAlignment="Center" Width="100"/>
+							<ScrollBar Orientation="Horizontal" AllowAutoHide="False" VerticalAlignment="Center" Width="100" IsEnabled="False"/>
+							<ScrollBar Orientation="Horizontal" AllowAutoHide="True" VerticalAlignment="Center" Width="100"/>
+							<ScrollBar Orientation="Horizontal" AllowAutoHide="True" VerticalAlignment="Center" Width="100" IsEnabled="False"/>
+						</StackPanel>
+						<ScrollBar Orientation="Vertical" AllowAutoHide="False" HorizontalAlignment="Center" Height="100"/>
+						<ScrollBar Orientation="Vertical" AllowAutoHide="False" HorizontalAlignment="Center" Height="100" IsEnabled="False"/>
+						<ScrollBar Orientation="Vertical" AllowAutoHide="True" HorizontalAlignment="Center" Height="100"/>
+						<ScrollBar Orientation="Vertical" AllowAutoHide="True" HorizontalAlignment="Center" Height="100" IsEnabled="False"/>
+					</StackPanel>
+				</Border>
+			</ThemeVariantScope>
+			<ThemeVariantScope RequestedThemeVariant="Light">
+				<Border Padding="20" Background="{DynamicResource BackgroundColor1}">
+					<StackPanel Orientation="Horizontal" Spacing="20">
+						<StackPanel Spacing="20">
+							<ScrollBar Orientation="Horizontal" AllowAutoHide="False" VerticalAlignment="Center" Width="100"/>
+							<ScrollBar Orientation="Horizontal" AllowAutoHide="False" VerticalAlignment="Center" Width="100" IsEnabled="False"/>
+							<ScrollBar Orientation="Horizontal" AllowAutoHide="True" VerticalAlignment="Center" Width="100"/>
+							<ScrollBar Orientation="Horizontal" AllowAutoHide="True" VerticalAlignment="Center" Width="100" IsEnabled="False"/>
+						</StackPanel>
+						<ScrollBar Orientation="Vertical" AllowAutoHide="False" HorizontalAlignment="Center" Height="100"/>
+						<ScrollBar Orientation="Vertical" AllowAutoHide="False" HorizontalAlignment="Center" Height="100" IsEnabled="False"/>
+						<ScrollBar Orientation="Vertical" AllowAutoHide="True" HorizontalAlignment="Center" Height="100"/>
+						<ScrollBar Orientation="Vertical" AllowAutoHide="True" HorizontalAlignment="Center" Height="100" IsEnabled="False"/>
+					</StackPanel>
+				</Border>
+			</ThemeVariantScope>
+		</StackPanel>
+	</Design.PreviewWith>
+
+	<ControlTheme x:Key="ScrollBarThumb" TargetType="Thumb">
+		<Setter Property="Background" Value="{DynamicResource BorderColor3}"/>
+		<Setter Property="CornerRadius" Value="1"/>
+		
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate>
+					<Border 
+						Background="{TemplateBinding Background}"
+						CornerRadius="{TemplateBinding CornerRadius}"/>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+		
+		<Setter Property="Transitions">
+			<Transitions>
+				<CornerRadiusTransition Property="CornerRadius" Duration="0:0:0.1" />
+				<TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.1" />
+			</Transitions>
+		</Setter>
+
+		<Style Selector="^:pointerover">
+			<Setter Property="Background" Value="{DynamicResource BorderColor1}" />
+		</Style>
+		
+		<Style Selector="^:disabled">
+			<Setter Property="Background" Value="{DynamicResource BorderColor4}" />
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme x:Key="ScrollBarPageButton" TargetType="RepeatButton">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border Background="{TemplateBinding Background}" />
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
+	<x:Double x:Key="ScrollBarSize">16</x:Double>
+	<x:Double x:Key="ScrollBarThumbSize">10</x:Double>
+	
+	<ControlTheme x:Key="{x:Type ScrollBar}" TargetType="ScrollBar">
+		<Setter Property="MinWidth" Value="{DynamicResource ScrollBarSize}" />
+		<Setter Property="MinHeight" Value="{DynamicResource ScrollBarSize}" />
+		<Setter Property="Background" Value="{DynamicResource BackgroundColor3}"/>
+
+		<Style Selector="^:vertical">
+			<Setter Property="Template">
+				<ControlTemplate>
+					<Panel>
+						<Border 
+							x:Name="TrackRect" 
+							Background="{TemplateBinding Background}">
+							<Border.Transitions>
+								<Transitions>
+									<DoubleTransition Property="Opacity" Duration="0:0:0.1" />
+								</Transitions>
+							</Border.Transitions>
+						</Border>
+
+						<Border Padding="4">
+							<Track
+								Minimum="{TemplateBinding Minimum}"
+								Maximum="{TemplateBinding Maximum}"
+								Value="{TemplateBinding Value, Mode=TwoWay}"
+								DeferThumbDrag="{TemplateBinding ScrollViewer.IsDeferredScrollingEnabled}"
+								ViewportSize="{TemplateBinding ViewportSize}"
+								Orientation="{TemplateBinding Orientation}"
+								IsDirectionReversed="True">
+
+								<Track.DecreaseButton>
+									<RepeatButton
+										Name="PART_PageUpButton"
+										Classes="largeIncrease"
+										Theme="{StaticResource ScrollBarPageButton}"
+										Focusable="False" />
+								</Track.DecreaseButton>
+
+								<Track.IncreaseButton>
+									<RepeatButton
+										Name="PART_PageDownButton"
+										Classes="largeIncrease"
+										Theme="{StaticResource ScrollBarPageButton}"
+										Focusable="False" />
+								</Track.IncreaseButton>
+
+								<Thumb Theme="{StaticResource ScrollBarThumb}"
+										Width="{DynamicResource ScrollBarThumbSize}"
+										MinHeight="{DynamicResource ScrollBarSize}"
+										RenderTransformOrigin="100%,50%"/>
+							</Track>
+						</Border>
+					</Panel>
+				</ControlTemplate>
+			</Setter>
+		</Style>
+
+		<Style Selector="^:horizontal">
+			<Setter Property="Template">
+				<ControlTemplate>
+					<Panel>
+						<Border
+							x:Name="TrackRect"
+							Background="{TemplateBinding Background}">
+							<Border.Transitions>
+								<Transitions>
+									<DoubleTransition Property="Opacity" Duration="0:0:0.1" />
+								</Transitions>
+							</Border.Transitions>
+						</Border>
+
+						<Border Padding="4">
+							<Track
+								Minimum="{TemplateBinding Minimum}"
+								Maximum="{TemplateBinding Maximum}"
+								Value="{TemplateBinding Value, Mode=TwoWay}"
+								DeferThumbDrag="{TemplateBinding ScrollViewer.IsDeferredScrollingEnabled}"
+								ViewportSize="{TemplateBinding ViewportSize}"
+								Orientation="{TemplateBinding Orientation}">
+
+								<Track.DecreaseButton>
+									<RepeatButton
+										Name="PART_PageUpButton"
+										Classes="largeIncrease"
+										Theme="{StaticResource ScrollBarPageButton}"
+										Focusable="False" />
+								</Track.DecreaseButton>
+
+								<Track.IncreaseButton>
+									<RepeatButton
+										Name="PART_PageDownButton"
+										Classes="largeIncrease"
+										Theme="{StaticResource ScrollBarPageButton}"
+										Focusable="False" />
+								</Track.IncreaseButton>
+
+								<Thumb Theme="{StaticResource ScrollBarThumb}"
+										Height="{DynamicResource ScrollBarThumbSize}"
+										MinWidth="{DynamicResource ScrollBarSize}"
+										RenderTransformOrigin="50%,100%"/>
+							</Track>
+						</Border>
+					</Panel>
+				</ControlTemplate>
+			</Setter>
+		</Style>
+
+		<Style Selector="^[IsExpanded=false]">
+			<Style Selector="^ /template/ Border#TrackRect">
+				<Setter Property="Opacity" Value="0" />
+			</Style>
+
+			<Style Selector="^ /template/ RepeatButton">
+				<Setter Property="Opacity" Value="0" />
+			</Style>
+
+			<Style Selector="^ /template/ Thumb">
+				<Setter Property="Background" Value="{DynamicResource BackgroundColor4}" />
+
+			</Style>
+			
+			<Style Selector="^:vertical /template/ Thumb">
+				<Setter Property="RenderTransform" Value="scaleX(0.2)" />
+			</Style>
+
+			<Style Selector="^:horizontal /template/ Thumb">
+				<Setter Property="RenderTransform" Value="scaleY(0.2)" />
+			</Style>
+		</Style>
+	</ControlTheme>
+
+</ResourceDictionary>
