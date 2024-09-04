@@ -4,6 +4,8 @@
 	xmlns:converters="using:J113D.Avalonia.Converters"
 	x:ClassModifier="internal">
 
+	<converters:WindowIconToImageConverter x:Key="WindowIconToImageConverter"/>
+	
 	<ControlTheme x:Key="{x:Type TitleBar}" TargetType="TitleBar">
 
 		<Setter Property="VerticalAlignment" Value="Top" />
@@ -13,10 +15,6 @@
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-					<Grid.Resources>
-						<converters:WindowIconToImageConverter x:Key="WindowIconToImageConverter"/>
-					</Grid.Resources>
-
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="auto"/>
 						<ColumnDefinition Width="*"/>
@@ -47,10 +45,11 @@
 						Grid.Column="2"
 						HorizontalAlignment="Right"
 						VerticalAlignment="Top"
-						Foreground="{TemplateBinding Foreground}" />
+						Foreground="{TemplateBinding Foreground}"/>
 				</Grid>
 			</ControlTemplate>
 		</Setter>
-	</ControlTheme>
 
+	</ControlTheme>
+	
 </ResourceDictionary>

@@ -1,0 +1,64 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:ClassModifier="internal"
+	xmlns:controls="clr-namespace:J113D.Avalonia.Controls"
+	xmlns:converters="using:Avalonia.Data.Converters">
+
+	<ControlTheme x:Key="{x:Type controls:Window}" TargetType="controls:Window" BasedOn="{StaticResource {x:Type Window}}">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Panel>
+
+					<Border
+						Background="{TemplateBinding Background}"
+						CornerRadius="{TemplateBinding CornerRadius}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						IsHitTestVisible="False"/>
+
+					<VisualLayerManager
+						Margin="{TemplateBinding Converter={StaticResource PaddingBorderAdder}}"
+						Padding="{Binding #PART_Titlebar.Height, Converter={StaticResource NumberToThicknessConverter}}"
+						x:Name="VLM">
+
+						<VisualLayerManager.ChromeOverlayLayer>
+							<TitleBar x:Name="PART_Titlebar">
+								<TitleBar.Styles>
+									<Style Selector="TitleBar /template/ CaptionButtons">
+
+										<Style Selector="^ /template/ Button#PART_RestoreButton">
+											<Setter Property="IsVisible" Value="{Binding $parent[controls:Window].HideRestoreButton, Converter={x:Static converters:BoolConverters.Not}}"/>
+										</Style>
+
+										<Style Selector="^ /template/ Button#PART_MinimizeButton">
+											<Setter Property="IsVisible" Value="{Binding $parent[controls:Window].HideMinimizeButton, Converter={x:Static converters:BoolConverters.Not}}"/>
+										</Style>
+
+										<Style Selector="^ /template/ Button#PART_CloseButton">
+											<Setter Property="IsVisible" Value="{Binding $parent[controls:Window].HideCloseButton, Converter={x:Static converters:BoolConverters.Not}}"/>
+										</Style>
+
+									</Style>
+								</TitleBar.Styles>
+							</TitleBar>
+						</VisualLayerManager.ChromeOverlayLayer>
+
+
+						<Border x:Name="ContentPadding">
+							<ContentPresenter
+								Name="PART_ContentPresenter"
+								Margin="{TemplateBinding Margin}"
+								HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+								VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+								Content="{TemplateBinding Content}"
+								ContentTemplate="{TemplateBinding ContentTemplate}" />
+						</Border>
+
+					</VisualLayerManager>
+				</Panel>
+
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+</ResourceDictionary>

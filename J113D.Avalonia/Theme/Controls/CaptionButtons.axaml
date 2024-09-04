@@ -1,6 +1,8 @@
 <ResourceDictionary
 	xmlns="https://github.com/avaloniaui"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:controls="using:J113D.Avalonia.Controls"
+	xmlns:converters="using:Avalonia.Data.Converters"
 	x:ClassModifier="internal">
 
 	<Design.PreviewWith>
@@ -31,6 +33,8 @@
 		
 		<Setter Property="Background" Value="Transparent" />
 		<Setter Property="BorderBrush" Value="{DynamicResource PressedColor}"/>
+		<Setter Property="Focusable" Value="False"/>
+		<Setter Property="IsTabStop" Value="False"/>
 		
 		<Setter Property="Template">
 			<ControlTemplate>
@@ -68,23 +72,6 @@
 					Orientation="Horizontal"
 					TextElement.FontSize="10"
 					Spacing="2">
-
-					<Button
-						x:Name="PART_FullScreenButton"
-						IsVisible="False"
-						Theme="{StaticResource SimpleCaptionButton}">
-
-						<Viewbox
-							Width="11"
-							Margin="2">
-
-							<Path
-								Name="FullScreenButtonPath"
-								Data="M2048 2048v-819h-205v469l-1493 -1493h469v-205h-819v819h205v-469l1493 1493h-469v205h819z"
-								Fill="{TemplateBinding Foreground}"
-								Stretch="UniformToFill" />
-						</Viewbox>
-					</Button>
 
 					<Button
 						x:Name="PART_MinimizeButton"
@@ -154,23 +141,9 @@
 				</StackPanel>
 			</ControlTemplate>
 		</Setter>
-
+		
 		<Style Selector="^:maximized /template/ Path#RestoreButtonPath">
-			<Setter
-				Property="Data" Value="M2048 410h-410v-410h-1638v1638h410v410h1638v-1638zM1434 1434h-1229v-1229h1229v1229zM1843 1843h-1229v-205h1024v-1024h205v1229z" />
-		</Style>
-
-		<Style Selector="^:fullscreen /template/ Path#FullScreenButtonPath">
-			<Setter Property="IsVisible" Value="True" />
-			<Setter Property="Data" Value="M205 1024h819v-819h-205v469l-674 -674l-145 145l674 674h-469v205zM1374 1229h469v-205h-819v819h205v-469l674 674l145 -145z" />
-		</Style>
-
-		<Style Selector="^:fullscreen /template/ Button#PART_RestoreButton">
-			<Setter Property="IsVisible" Value="False" />
-		</Style>
-
-		<Style Selector="^:fullscreen /template/ Button#PART_MinimizeButton">
-			<Setter Property="IsVisible" Value="False" />
+			<Setter Property="Data" Value="M2048 410h-410v-410h-1638v1638h410v410h1638v-1638zM1434 1434h-1229v-1229h1229v1229zM1843 1843h-1229v-205h1024v-1024h205v1229z" />
 		</Style>
 
 		<Style Selector="^ /template/ Button#PART_RestoreButton:disabled">
