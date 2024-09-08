@@ -16,7 +16,7 @@
 	<StreamGeometry x:Key="CheckMarkPathData">M5.5 10.586 1.707 6.793A1 1 0 0 0 .293 8.207l4.5 4.5a1 1 0 0 0 1.414 0l11-11A1 1 0 0 0 15.793.293L5.5 10.586Z</StreamGeometry>
 
 	<ControlTheme x:Key="{x:Type CheckBox}" TargetType="CheckBox">
-		<Setter Property="Padding" Value="8,0,0,0" />
+		<Setter Property="Padding" Value="4,0" />
 		<Setter Property="HorizontalContentAlignment" Value="Left" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />
 		<Setter Property="MinHeight" Value="32" />
@@ -30,7 +30,8 @@
 							VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
 							CornerRadius="2"
 							Height="24"
-							Width="24">
+							Width="24"
+							Margin="4">
 						<Viewbox Width="16" Height="16">
 							<Path x:Name="CheckGlyph"
 									Opacity="0"
