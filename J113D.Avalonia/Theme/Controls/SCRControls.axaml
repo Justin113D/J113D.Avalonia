@@ -23,6 +23,7 @@
 				<!-- //////////////////// -->
 				
 				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/Menu.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/ContextMenu.axaml" />
 				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/MenuItem.axaml" />
 				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/Separator.axaml" />
 

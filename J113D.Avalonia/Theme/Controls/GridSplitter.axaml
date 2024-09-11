@@ -11,7 +11,7 @@
 		
 		<Setter Property="PreviewContent">
 			<Template>
-				<Rectangle Fill="{DynamicResource SystemAccentColor}" />
+				<Rectangle Fill="{DynamicResource AccentColor}" />
 			</Template>
 		</Setter>
 		

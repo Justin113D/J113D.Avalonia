@@ -190,7 +190,6 @@
 								CornerRadius="2">
 
 							<ScrollViewer>
-
 								<ItemsPresenter
 									Name="PART_ItemsPresenter"
 									ItemsPanel="{TemplateBinding ItemsPanel}"
