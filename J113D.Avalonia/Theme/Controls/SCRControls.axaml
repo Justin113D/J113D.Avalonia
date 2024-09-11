@@ -50,7 +50,6 @@
 				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/CaptionButtons.axaml" />
 				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/TitleBar.axaml" />
 				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/Window.axaml" />
-				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/J113DWindow.axaml" />
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
 	</Styles.Resources>

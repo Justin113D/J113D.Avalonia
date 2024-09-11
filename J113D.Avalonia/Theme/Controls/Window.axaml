@@ -1,19 +1,20 @@
-<ResourceDictionary 
+<ResourceDictionary
 	xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     x:ClassModifier="internal"
 	xmlns:converters="using:J113D.Avalonia.Converters">
 
-	<converters:PaddingBorderAdderConverter x:Key="PaddingBorderAdder"/>
-	<converters:NumberToThicknessConverter x:Key="NumberToThicknessConverter" Top="True"/>
-	
 	<ControlTheme x:Key="{x:Type Window}" TargetType="Window">
-		
+
+		<ControlTheme.Resources>
+			<ControlTheme x:Key="WindowTitleBar" TargetType="TitleBar" BasedOn="{StaticResource {x:Type TitleBar}}"/>
+		</ControlTheme.Resources>
+
 		<Setter Property="Background" Value="{DynamicResource BackgroundColor2}" />
 		<Setter Property="Padding" Value="4" />
 		<Setter Property="Margin" Value="0 4 0 0"/>
 		<Setter Property="CornerRadius" Value="3"/>
-		
+
 		<Setter Property="Foreground" Value="{DynamicResource ForegroundColor2}" />
 		<Setter Property="FontSize" Value="14" />
 
@@ -21,47 +22,49 @@
 		<Setter Property="ExtendClientAreaToDecorationsHint" Value="True"/>
 		<Setter Property="ExtendClientAreaChromeHints" Value="PreferSystemChrome"/>
 		<Setter Property="ExtendClientAreaTitleBarHeightHint" Value="-1"/>
+		
+		<Setter Property="BorderBrush" Value="{DynamicResource BackgroundColor4}"/>
+		<Setter Property="BorderThickness" Value="2"/>
 
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Panel>
-					
-					<Border 
+					<Border
 						Background="{TemplateBinding Background}"
 						CornerRadius="{TemplateBinding CornerRadius}"
 						BorderThickness="{TemplateBinding BorderThickness}"
 						BorderBrush="{TemplateBinding BorderBrush}"
 						IsHitTestVisible="False"/>
 					
-					<VisualLayerManager 
-						Margin="{TemplateBinding Converter={StaticResource PaddingBorderAdder}}" 
-						Padding="{Binding #PART_Titlebar.Height, Converter={StaticResource NumberToThicknessConverter}}" 
-						x:Name="VLM">
-						
-						<VisualLayerManager.ChromeOverlayLayer>
-							<TitleBar x:Name="PART_Titlebar"/>
-						</VisualLayerManager.ChromeOverlayLayer>
+					<Border
+						BorderThickness="{TemplateBinding BorderThickness}"
+						Padding="{TemplateBinding Padding}">
 
+						<VisualLayerManager Padding="{TemplateBinding WindowDecorationMargin}">
+							<VisualLayerManager.ChromeOverlayLayer>
+								<TitleBar />
+							</VisualLayerManager.ChromeOverlayLayer>
 
-						<Border x:Name="ContentPadding">
-							<ContentPresenter 
-								Name="PART_ContentPresenter"
-								Margin="{TemplateBinding Margin}"
-								HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-								VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-								Content="{TemplateBinding Content}"
-								ContentTemplate="{TemplateBinding ContentTemplate}" />
-						</Border>
-						
-					</VisualLayerManager>
+							<Panel Margin="{TemplateBinding OffScreenMargin}">
+								<Panel x:Name="ContentPadding">
+									<ContentPresenter
+										Name="PART_ContentPresenter"
+										Margin="{TemplateBinding Margin}"
+										HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+										VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+										Content="{TemplateBinding Content}"
+										ContentTemplate="{TemplateBinding ContentTemplate}" />
+								</Panel>
+							</Panel>
+						</VisualLayerManager>
+					</Border>
 				</Panel>
-
 			</ControlTemplate>
 		</Setter>
 
-		<Style Selector="^[WindowState=Maximized] /template/ Border#ContentPadding">
-			<Setter Property="Margin" Value="8"/>
+		<Style Selector="^[WindowState=Maximized] /template/ Panel#ContentPadding">
+			<Setter Property="Margin" Value="2"/>
 		</Style>
-		
+
 	</ControlTheme>
 </ResourceDictionary>

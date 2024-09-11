@@ -33,8 +33,6 @@ namespace J113D.Avalonia.Controls
             set => SetValue(HideRestoreButtonProperty, value);
         }
 
-        protected override Type StyleKeyOverride => typeof(Window);
-
         public Window() : base()
         {
 

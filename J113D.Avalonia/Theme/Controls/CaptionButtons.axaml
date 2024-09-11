@@ -76,7 +76,8 @@
 					<Button
 						x:Name="PART_MinimizeButton"
 						Theme="{StaticResource SimpleCaptionButton}"
-						AutomationProperties.Name="Minimize">
+						AutomationProperties.Name="Minimize"
+						IsVisible="{Binding $parent[controls:Window].HideMinimizeButton, Converter={x:Static converters:BoolConverters.Not}, FallbackValue=True}">
 
 						<Viewbox
 							Width="11"
@@ -92,7 +93,8 @@
 					<Button
 						x:Name="PART_RestoreButton"
 						Theme="{StaticResource SimpleCaptionButton}"
-						AutomationProperties.Name="Maximize">
+						AutomationProperties.Name="Maximize"
+						IsVisible="{Binding $parent[controls:Window].HideRestoreButton, Converter={x:Static converters:BoolConverters.Not}, FallbackValue=True}">
 
 						<Viewbox
 							Width="11"
@@ -115,7 +117,8 @@
 						BorderBrush="{DynamicResource PressedRedColor}"
 						Foreground="{DynamicResource PressedRedColor}"
 						Theme="{StaticResource SimpleCaptionButton}"
-						AutomationProperties.Name="Close">
+						AutomationProperties.Name="Close"
+						IsVisible="{Binding $parent[controls:Window].HideCloseButton, Converter={x:Static converters:BoolConverters.Not}, FallbackValue=True}">
 
 						<Button.Styles>
 							<Style Selector="Button:pointerover /template/ ContentPresenter">
@@ -149,6 +152,7 @@
 		<Style Selector="^ /template/ Button#PART_RestoreButton:disabled">
 			<Setter Property="Opacity" Value="0.2"/>
 		</Style>
+		
 
 	</ControlTheme>
 </ResourceDictionary>
