@@ -19,6 +19,8 @@ namespace J113D.Avalonia.Utilities.IO
 
         public Uri? LoadedFilePath { get; private set; }
 
+        protected virtual bool AskForResetConfirmation => true;
+
         private async Task FailedToLoadFileBox(string message)
         {
             _ = await Window.MessageBoxDialog(
@@ -30,7 +32,7 @@ namespace J113D.Avalonia.Utilities.IO
 
         public async Task<bool> ResetConfirmation()
         {
-            if (FileChangeTracker?.HasFileChanged != false)
+            if (AskForResetConfirmation && FileChangeTracker?.HasFileChanged != false)
             {
                 MessageBoxResult? result = await Window.MessageBoxDialog(
                     "Warning!",
