@@ -1,5 +1,5 @@
 <Styles
-	x:Class="J113D.Avalonia.Theme.SCRTheme"
+	x:Class="J113D.Avalonia.Theme.J113DTheme"
 	xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
@@ -12,5 +12,5 @@
 		</ResourceDictionary>
 	</Styles.Resources>
 
-	<StyleInclude Source="avares://J113D.Avalonia/Theme/Controls/SCRControls.axaml" />
+	<StyleInclude Source="avares://J113D.Avalonia/Theme/Controls/J113DControls.axaml" />
 </Styles>

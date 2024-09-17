@@ -4,13 +4,13 @@ using System;
 
 namespace J113D.Avalonia.Theme
 {
-    public class SCRTheme : Styles
+    public class J113DTheme : Styles
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SCRTheme"/> class.
+        /// Initializes a new instance of the <see cref="J113DTheme"/> class.
         /// </summary>
         /// <param name="sp">The parent's service provider.</param>
-        public SCRTheme(IServiceProvider? sp = null)
+        public J113DTheme(IServiceProvider? sp = null)
         {
             AvaloniaXamlLoader.Load(sp, this);
         }

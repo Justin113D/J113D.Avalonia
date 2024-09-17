@@ -1,6 +1,6 @@
 ﻿namespace J113D.Avalonia.Theme
 {
-    public enum SCRThemeVariant
+    public enum J113DThemeVariant
     {
         Dark,
         Light

@@ -4,9 +4,9 @@ using System;
 
 namespace J113D.Avalonia.Theme
 {
-    public static class SCRThemeVariantExtensions
+    public static class J113DThemeVariantExtensions
     {
-        public static void ApplyTheme(this SCRThemeVariant themeVariant, Application? application = null)
+        public static void ApplyTheme(this J113DThemeVariant themeVariant, Application? application = null)
         {
             application ??= Application.Current;
 
@@ -17,7 +17,7 @@ namespace J113D.Avalonia.Theme
 
             application.RequestedThemeVariant = themeVariant switch
             {
-                SCRThemeVariant.Light => ThemeVariant.Light,
+                J113DThemeVariant.Light => ThemeVariant.Light,
                 _ => ThemeVariant.Dark,
             };
         }
