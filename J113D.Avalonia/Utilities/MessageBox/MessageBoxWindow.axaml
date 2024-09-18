@@ -1,28 +1,32 @@
-<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-		xmlns:local="using:J113D.Avalonia.MessageBox"
-		xmlns:accent="using:J113D.Avalonia.Theme.Accents"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="J113D.Avalonia.MessageBox.MessageBoxWindow"
-		MinWidth="240"
-		MinHeight="120"
-		MaxWidth="500"
-		SizeToContent="WidthAndHeight"
-		BorderThickness="3"
-		CanResize="False"
-		WindowStartupLocation="CenterOwner">
+<controls:Window 
+	xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:local="using:J113D.Avalonia.MessageBox"
+	xmlns:accent="using:J113D.Avalonia.Theme.Accents"
+	xmlns:controls="using:J113D.Avalonia.Controls"
+    mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+    x:Class="J113D.Avalonia.MessageBox.MessageBoxWindow"
+	MinWidth="240"
+	MinHeight="120"
+	MaxWidth="500"
+	SizeToContent="WidthAndHeight"
+	CanResize="False"
+	WindowStartupLocation="CenterOwner"
+	HideCloseButton="True"
+	HideMinimizeButton="True"
+	HideRestoreButton="True">
 
 	<Window.Styles>
-
-		<Style Selector="TitleBar /template/ CaptionButtons">
-			<Setter Property="IsVisible" Value="False"/>
-		</Style>
 
 		<!-- Icons -->
 
 		<Style Selector="Window">
+
+			<Style Selector="^[IsExtendedIntoWindowDecorations=True]">
+				<Setter Property="BorderThickness" Value="3"/>
+			</Style>
 			
 			<Style Selector="^.Question">
 				<Setter Property="Icon" Value="avares://J113D.Avalonia/Utilities/MessageBox/Icons/Question.png"/>
@@ -96,4 +100,4 @@
 	</Grid>
 
 
-</Window>
+</controls:Window>

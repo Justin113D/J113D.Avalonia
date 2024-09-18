@@ -3,7 +3,7 @@ using Avalonia.Interactivity;
 
 namespace J113D.Avalonia.MessageBox
 {
-    public partial class MessageBoxWindow : Window
+    public partial class MessageBoxWindow : J113D.Avalonia.Controls.Window
     {
         public MessageBoxWindow() { }
 
