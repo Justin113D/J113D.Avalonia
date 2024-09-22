@@ -1,6 +1,5 @@
 ﻿using Avalonia;
 using Avalonia.Platform;
-using System;
 
 namespace J113D.Avalonia.Controls
 {
