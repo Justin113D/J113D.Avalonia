@@ -11,8 +11,12 @@
 						CornerRadius="{TemplateBinding CornerRadius}"
 						Background="{TemplateBinding Background}"
 						Padding="{TemplateBinding Padding}">
-					<Grid ColumnDefinitions="auto *">
-						
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition SharedSizeGroup="ContentHeader" Width="auto"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+							
 						<ContentPresenter 
 							Name="PART_HeaderPresenter"
 							Content="{TemplateBinding Header}"
@@ -20,7 +24,7 @@
 							ContentTemplate="{TemplateBinding HeaderTemplate}"
 							HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
 							VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-							Grid.Row="0" />
+							Grid.Column="0" />
 						
 						<ContentPresenter 
 							Name="PART_ContentPresenter"
@@ -29,7 +33,7 @@
 							RecognizesAccessKey="True"
 							VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
 							HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-							Grid.Row="1" />
+							Grid.Column="1" />
 					</Grid>
 				</Border>
 			</ControlTemplate>
