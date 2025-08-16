@@ -17,6 +17,10 @@ J113D.Avalonia.Controls.Window.HideRestoreButton.get -> bool
 J113D.Avalonia.Controls.Window.HideRestoreButton.set -> void
 J113D.Avalonia.Controls.Window.Window() -> void
 J113D.Avalonia.Controls.Window.Window(Avalonia.Platform.IWindowImpl! impl) -> void
+J113D.Avalonia.Converters.ExceptionConverter
+J113D.Avalonia.Converters.ExceptionConverter.Convert(object? value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+J113D.Avalonia.Converters.ExceptionConverter.ConvertBack(object? value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+J113D.Avalonia.Converters.ExceptionConverter.ExceptionConverter() -> void
 J113D.Avalonia.Converters.NullToStringConverter
 J113D.Avalonia.Converters.NullToStringConverter.Convert(object? value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 J113D.Avalonia.Converters.NullToStringConverter.ConvertBack(object? value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
@@ -93,6 +97,7 @@ J113D.Avalonia.Utilities.IO.BaseFileHandler.Save(bool newPath) -> System.Threadi
 J113D.Avalonia.Utilities.IO.BaseFileHandler.SaveNoDialog(System.Uri! filepath) -> System.Threading.Tasks.Task<bool>!
 J113D.Avalonia.Utilities.IO.IFileChangeTracker
 J113D.Avalonia.Utilities.IO.IFileChangeTracker.HasFileChanged.get -> bool
+J113D.Avalonia.Utilities.IO.IFileChangeTracker.StoreCurrentState(bool clearHistory) -> void
 J113D.Avalonia.Utilities.IO.TextFileHandler
 J113D.Avalonia.Utilities.IO.TextFileHandler.TextFileHandler() -> void
 override J113D.Avalonia.Utilities.Enum.EnumDescription.ToString() -> string!

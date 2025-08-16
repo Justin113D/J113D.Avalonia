@@ -1,5 +1,1 @@
-﻿J113D.Avalonia.Converters.ExceptionConverter
-J113D.Avalonia.Converters.ExceptionConverter.Convert(object? value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
-J113D.Avalonia.Converters.ExceptionConverter.ConvertBack(object? value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
-J113D.Avalonia.Converters.ExceptionConverter.ExceptionConverter() -> void
-J113D.Avalonia.Utilities.IO.IFileChangeTracker.StoreCurrentState(bool clearHistory) -> void
+﻿
