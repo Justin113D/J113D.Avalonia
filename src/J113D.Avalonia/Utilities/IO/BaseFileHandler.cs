@@ -132,7 +132,7 @@ namespace J113D.Avalonia.Utilities.IO
 			}
 
 			LoadedFilePath = filepath;
-			FileChangeTracker?.StoreCurrentState();
+			FileChangeTracker?.StoreCurrentState(false);
 			return true;
 		}
 
@@ -180,7 +180,7 @@ namespace J113D.Avalonia.Utilities.IO
 			}
 
 			LoadedFilePath = filepath;
-			FileChangeTracker?.StoreCurrentState();
+			FileChangeTracker?.StoreCurrentState(true);
 			return true;
 		}
 
@@ -197,7 +197,7 @@ namespace J113D.Avalonia.Utilities.IO
 
 			InternalReset();
 			LoadedFilePath = null;
-			FileChangeTracker?.StoreCurrentState();
+			FileChangeTracker?.StoreCurrentState(true);
 			return true;
 		}
 

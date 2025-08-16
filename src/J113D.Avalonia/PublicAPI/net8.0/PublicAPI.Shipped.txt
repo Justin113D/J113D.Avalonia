@@ -92,10 +92,7 @@ J113D.Avalonia.Utilities.IO.BaseFileHandler.ResetConfirmation() -> System.Thread
 J113D.Avalonia.Utilities.IO.BaseFileHandler.Save(bool newPath) -> System.Threading.Tasks.Task<bool>!
 J113D.Avalonia.Utilities.IO.BaseFileHandler.SaveNoDialog(System.Uri! filepath) -> System.Threading.Tasks.Task<bool>!
 J113D.Avalonia.Utilities.IO.IFileChangeTracker
-J113D.Avalonia.Utilities.IO.IFileChangeTracker.CopyState(J113D.Avalonia.Utilities.IO.IFileChangeTracker! source) -> void
 J113D.Avalonia.Utilities.IO.IFileChangeTracker.HasFileChanged.get -> bool
-J113D.Avalonia.Utilities.IO.IFileChangeTracker.ResetCurrentState() -> void
-J113D.Avalonia.Utilities.IO.IFileChangeTracker.StoreCurrentState() -> void
 J113D.Avalonia.Utilities.IO.TextFileHandler
 J113D.Avalonia.Utilities.IO.TextFileHandler.TextFileHandler() -> void
 override J113D.Avalonia.Utilities.Enum.EnumDescription.ToString() -> string!

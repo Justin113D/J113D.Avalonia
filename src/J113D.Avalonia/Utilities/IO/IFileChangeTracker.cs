@@ -13,17 +13,6 @@
 		/// <summary>
 		/// Store the current state
 		/// </summary>
-		public void StoreCurrentState();
-
-		/// <summary>
-		/// Reset the current state
-		/// </summary>
-		public void ResetCurrentState();
-
-		/// <summary>
-		/// Copy the current state to another file change tracker
-		/// </summary>
-		/// <param name="source">The file change tracker to copy to</param>
-		public void CopyState(IFileChangeTracker source);
+		public void StoreCurrentState(bool clearHistory);
 	}
 }

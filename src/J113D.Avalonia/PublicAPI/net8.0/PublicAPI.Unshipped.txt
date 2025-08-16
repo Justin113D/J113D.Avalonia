@@ -1,1 +1,1 @@
-﻿
+J113D.Avalonia.Utilities.IO.IFileChangeTracker.StoreCurrentState(bool clearHistory) -> void
