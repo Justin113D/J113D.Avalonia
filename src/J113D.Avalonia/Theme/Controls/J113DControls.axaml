@@ -42,6 +42,7 @@
 				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/ToggleButton.axaml" />
 				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/CheckBox.axaml" />
 				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/GridSplitter.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/Slider.axaml" />
 				
 				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/Label.axaml" />
 				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/TextBox.axaml" />
