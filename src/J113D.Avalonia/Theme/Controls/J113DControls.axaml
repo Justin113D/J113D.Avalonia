@@ -13,6 +13,7 @@
 				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/HeaderedContentControl.axaml" />
 				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/PopupRoot.axaml" />
 				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/ThemeVariantScope.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/DataValidationErrors.axaml" />
 				
 				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/ScrollBar.axaml" />
 				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/ScrollViewer.axaml" />
