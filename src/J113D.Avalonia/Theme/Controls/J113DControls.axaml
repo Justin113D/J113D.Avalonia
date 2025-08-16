@@ -36,6 +36,11 @@
 
 				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/ComboBox.axaml" />
 				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/ComboBoxItem.axaml" />
+
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/TabControl.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/TabItem.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/TabStrip.axaml" />
+				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/TabStripItem.axaml" />
 				
 				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/Button.axaml" />
 				<MergeResourceInclude Source="avares://J113D.Avalonia/Theme/Controls/RepeatButton.axaml" />
