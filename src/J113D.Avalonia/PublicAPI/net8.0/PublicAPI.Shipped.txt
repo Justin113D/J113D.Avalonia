@@ -1,13 +1,7 @@
 ﻿#nullable enable
-abstract J113D.Avalonia.Utilities.IO.BaseFileHandler.FileChangeTracker.get -> J113D.Avalonia.Utilities.IO.IFileChangeTracker?
 abstract J113D.Avalonia.Utilities.IO.BaseFileHandler.FileType.get -> System.Collections.Generic.IReadOnlyList<Avalonia.Platform.Storage.FilePickerFileType!>?
 abstract J113D.Avalonia.Utilities.IO.BaseFileHandler.FileTypeName.get -> string!
-abstract J113D.Avalonia.Utilities.IO.BaseFileHandler.InternalLoad(System.Uri! filePath) -> void
-abstract J113D.Avalonia.Utilities.IO.BaseFileHandler.InternalReset() -> void
-abstract J113D.Avalonia.Utilities.IO.BaseFileHandler.InternalSave(System.Uri! filePath) -> void
 abstract J113D.Avalonia.Utilities.IO.BaseFileHandler.Window.get -> Avalonia.Controls.Window!
-abstract J113D.Avalonia.Utilities.IO.TextFileHandler.ReadText(System.Uri! filePath, string! text) -> void
-abstract J113D.Avalonia.Utilities.IO.TextFileHandler.WriteText(System.Uri! filePath) -> string!
 J113D.Avalonia.Controls.Window
 J113D.Avalonia.Controls.Window.HideCloseButton.get -> bool
 J113D.Avalonia.Controls.Window.HideCloseButton.set -> void
@@ -87,22 +81,7 @@ J113D.Avalonia.Utilities.Enum.EnumDescriptionConverter.EnumDescriptionConverter(
 J113D.Avalonia.Utilities.Enum.EnumUtils
 J113D.Avalonia.Utilities.IO.BaseFileHandler
 J113D.Avalonia.Utilities.IO.BaseFileHandler.BaseFileHandler() -> void
-J113D.Avalonia.Utilities.IO.BaseFileHandler.ForgetFilePath() -> void
-J113D.Avalonia.Utilities.IO.BaseFileHandler.LoadedFilePath.get -> System.Uri?
-J113D.Avalonia.Utilities.IO.BaseFileHandler.Open() -> System.Threading.Tasks.Task<bool>!
-J113D.Avalonia.Utilities.IO.BaseFileHandler.OpenNoDialog(System.Uri! filepath) -> System.Threading.Tasks.Task<bool>!
-J113D.Avalonia.Utilities.IO.BaseFileHandler.Reset() -> System.Threading.Tasks.Task<bool>!
-J113D.Avalonia.Utilities.IO.BaseFileHandler.ResetConfirmation() -> System.Threading.Tasks.Task<bool>!
-J113D.Avalonia.Utilities.IO.BaseFileHandler.Save(bool newPath) -> System.Threading.Tasks.Task<bool>!
-J113D.Avalonia.Utilities.IO.BaseFileHandler.SaveNoDialog(System.Uri! filepath) -> System.Threading.Tasks.Task<bool>!
-J113D.Avalonia.Utilities.IO.IFileChangeTracker
-J113D.Avalonia.Utilities.IO.IFileChangeTracker.HasFileChanged.get -> bool
-J113D.Avalonia.Utilities.IO.IFileChangeTracker.StoreCurrentState(bool clearHistory) -> void
-J113D.Avalonia.Utilities.IO.TextFileHandler
-J113D.Avalonia.Utilities.IO.TextFileHandler.TextFileHandler() -> void
 override J113D.Avalonia.Utilities.Enum.EnumDescription.ToString() -> string!
-override J113D.Avalonia.Utilities.IO.TextFileHandler.InternalLoad(System.Uri! filePath) -> void
-override J113D.Avalonia.Utilities.IO.TextFileHandler.InternalSave(System.Uri! filePath) -> void
 static J113D.Avalonia.MessageBox.MessageBoxExtensions.MessageBoxDialog(this Avalonia.Controls.Window! window, string! title, string! message, J113D.Avalonia.MessageBox.MessageBoxButtons buttons, J113D.Avalonia.MessageBox.MessageBoxIcon icon) -> System.Threading.Tasks.Task<J113D.Avalonia.MessageBox.MessageBoxResult?>!
 static J113D.Avalonia.Theme.Accents.Colors.Blue.get -> Avalonia.Media.Color
 static J113D.Avalonia.Theme.Accents.Colors.Green.get -> Avalonia.Media.Color
@@ -116,4 +95,3 @@ static readonly J113D.Avalonia.Controls.Window.HideCloseButtonProperty -> Avalon
 static readonly J113D.Avalonia.Controls.Window.HideMinimizeButtonProperty -> Avalonia.StyledProperty<bool>!
 static readonly J113D.Avalonia.Controls.Window.HideRestoreButtonProperty -> Avalonia.StyledProperty<bool>!
 static readonly J113D.Avalonia.Converters.WindowIconToImageConverter.Instance -> J113D.Avalonia.Converters.WindowIconToImageConverter!
-virtual J113D.Avalonia.Utilities.IO.BaseFileHandler.AskForResetConfirmation.get -> bool

@@ -1,1 +1,41 @@
-﻿
+﻿abstract J113D.Avalonia.Utilities.IO.BaseFileHandler.HasUnsavedChanges.get -> bool
+abstract J113D.Avalonia.Utilities.IO.BaseFileHandler.OnCloseConfirm() -> System.Threading.Tasks.Task<bool>!
+abstract J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.GetDataChangeState(TFileData data) -> J113D.Avalonia.Utilities.IO.IDataChangeState?
+abstract J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.InternalLoad(System.Uri! filePath) -> TFileData
+abstract J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.InternalNew() -> TFileData
+abstract J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.InternalSave(TFileData data, System.Uri! filePath) -> void
+abstract J113D.Avalonia.Utilities.IO.BaseSingleFileHandler.DataChangeState.get -> J113D.Avalonia.Utilities.IO.IDataChangeState?
+abstract J113D.Avalonia.Utilities.IO.BaseSingleFileHandler.InternalLoad(System.Uri! filePath) -> void
+abstract J113D.Avalonia.Utilities.IO.BaseSingleFileHandler.InternalReset() -> void
+abstract J113D.Avalonia.Utilities.IO.BaseSingleFileHandler.InternalSave(System.Uri! filePath) -> void
+J113D.Avalonia.Utilities.IO.BaseFileHandler.CloseConfirmation() -> System.Threading.Tasks.Task<bool>!
+J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>
+J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.Add(TFileData data, System.Uri? uri) -> void
+J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.BaseMultiFileHandler() -> void
+J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.CheckHasUnsavedChanges(TFileData data) -> bool
+J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.Close(TFileData data) -> System.Threading.Tasks.Task<bool>!
+J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.ForgetFilePath(TFileData data) -> void
+J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.GetFilepath(TFileData data) -> System.Uri?
+J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.New() -> TFileData
+J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.Open() -> System.Threading.Tasks.Task<TFileData[]?>!
+J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.OpenNoDialog(System.Collections.Generic.IEnumerable<System.Uri!>! filepaths) -> System.Threading.Tasks.Task<TFileData[]!>!
+J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.Save(TFileData data, bool newPath) -> System.Threading.Tasks.Task<bool>!
+J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.SaveAll() -> System.Threading.Tasks.Task<bool>!
+J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.SaveNoDialog(TFileData data, System.Uri! filepath) -> System.Threading.Tasks.Task<bool>!
+J113D.Avalonia.Utilities.IO.BaseSingleFileHandler
+J113D.Avalonia.Utilities.IO.BaseSingleFileHandler.BaseSingleFileHandler() -> void
+J113D.Avalonia.Utilities.IO.BaseSingleFileHandler.ForgetFilePath() -> void
+J113D.Avalonia.Utilities.IO.BaseSingleFileHandler.LoadedFilePath.get -> System.Uri?
+J113D.Avalonia.Utilities.IO.BaseSingleFileHandler.Open() -> System.Threading.Tasks.Task<bool>!
+J113D.Avalonia.Utilities.IO.BaseSingleFileHandler.OpenNoDialog(System.Uri! filepath) -> System.Threading.Tasks.Task<bool>!
+J113D.Avalonia.Utilities.IO.BaseSingleFileHandler.Reset() -> System.Threading.Tasks.Task<bool>!
+J113D.Avalonia.Utilities.IO.BaseSingleFileHandler.Save(bool newPath) -> System.Threading.Tasks.Task<bool>!
+J113D.Avalonia.Utilities.IO.BaseSingleFileHandler.SaveNoDialog(System.Uri! filepath) -> System.Threading.Tasks.Task<bool>!
+J113D.Avalonia.Utilities.IO.IDataChangeState
+J113D.Avalonia.Utilities.IO.IDataChangeState.HasDataChanged.get -> bool
+J113D.Avalonia.Utilities.IO.IDataChangeState.StoreCurrentState(bool clearHistory) -> void
+override J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.OnCloseConfirm() -> System.Threading.Tasks.Task<bool>!
+override sealed J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.HasUnsavedChanges.get -> bool
+override sealed J113D.Avalonia.Utilities.IO.BaseSingleFileHandler.HasUnsavedChanges.get -> bool
+override sealed J113D.Avalonia.Utilities.IO.BaseSingleFileHandler.OnCloseConfirm() -> System.Threading.Tasks.Task<bool>!
+virtual J113D.Avalonia.Utilities.IO.BaseFileHandler.AskForCloseConfirmation.get -> bool
