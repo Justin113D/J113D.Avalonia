@@ -18,6 +18,19 @@ namespace J113D.Avalonia.Utilities.IO
 		public sealed override bool HasUnsavedChanges => _files.Keys.Any(CheckHasUnsavedChanges);
 
 		/// <summary>
+		/// Event handler for when filepath assigned to data has been updated
+		/// </summary>
+		/// <param name="filehandler">The file handler that invoked the event</param>
+		/// <param name="data">The data being updated</param>
+		/// <param name="uri">The new uri</param>
+		public delegate void DataUriUpdatedEventHandler(BaseMultiFileHandler<TFileData> filehandler, TFileData data, Uri? uri);
+
+		/// <summary>
+		/// Event for when the uri atacked to data gets updated
+		/// </summary>
+		public event DataUriUpdatedEventHandler? DataUriUpdated;
+
+		/// <summary>
 		/// Returns the file path to data
 		/// </summary>
 		/// <param name="data">The data to the get filepath for</param>
@@ -41,6 +54,7 @@ namespace J113D.Avalonia.Utilities.IO
 		{
 			_files[data] = uri;
 			GetDataChangeState(data)?.StoreCurrentState(clearHistory);
+			DataUriUpdated?.Invoke(this, data, uri);
 		}
 
 
@@ -117,6 +131,23 @@ namespace J113D.Avalonia.Utilities.IO
 
 			_files.Remove(data);
 			return true;
+		}
+
+		/// <summary>
+		/// Closes all opened file data
+		/// </summary>
+		/// <returns></returns>
+		/// <exception cref="InvalidOperationException"></exception>
+		public async Task<bool> CloseAll()
+		{
+			bool result = await CloseConfirmation();
+
+			if(result)
+			{
+				_files.Clear();
+			}
+
+			return result;
 		}
 
 		/// <summary>

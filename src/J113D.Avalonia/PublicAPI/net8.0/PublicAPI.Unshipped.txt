@@ -14,6 +14,9 @@ J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.Add(TFileData data, 
 J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.BaseMultiFileHandler() -> void
 J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.CheckHasUnsavedChanges(TFileData data) -> bool
 J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.Close(TFileData data) -> System.Threading.Tasks.Task<bool>!
+J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.CloseAll() -> System.Threading.Tasks.Task<bool>!
+J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.DataUriUpdated -> J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.DataUriUpdatedEventHandler?
+J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.DataUriUpdatedEventHandler
 J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.ForgetFilePath(TFileData data) -> void
 J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.GetFilepath(TFileData data) -> System.Uri?
 J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.New() -> TFileData
