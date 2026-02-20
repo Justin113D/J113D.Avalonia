@@ -11,7 +11,7 @@
 		<Title>J113D Avalonia Library</Title>
 		<Product>J113D Avalonia Library</Product>
 		<Description>My personal avalonia utilities and independent theme</Description>
-		<Version>1.1.0</Version>
+		<Version>1.2.0</Version>
 		<RepositoryUrl>https://github.com/Justin113D/J113D.Avalonia</RepositoryUrl>
 		<PackageProjectUrl>https://github.com/Justin113D/J113D.Avalonia</PackageProjectUrl>
 		<PackageId>J113D.Avalonia</PackageId>
