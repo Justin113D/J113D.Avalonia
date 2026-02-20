@@ -1,5 +1,6 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using J113D.Avalonia.Utilities.MessageBox;
 
 namespace J113D.Avalonia.MessageBox
 {
