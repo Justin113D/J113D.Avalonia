@@ -11,7 +11,7 @@
 		</ControlTheme.Resources>
 
 		<Setter Property="Background" Value="{DynamicResource BackgroundColor2}" />
-		<Setter Property="Padding" Value="6" />
+		<Setter Property="Padding" Value="4" />
 		<Setter Property="Margin" Value="0 4 0 0"/>
 
 		<Setter Property="Foreground" Value="{DynamicResource ForegroundColor2}" />
@@ -21,6 +21,10 @@
 		<Setter Property="ExtendClientAreaToDecorationsHint" Value="True"/>
 		<Setter Property="ExtendClientAreaChromeHints" Value="PreferSystemChrome"/>
 		<Setter Property="ExtendClientAreaTitleBarHeightHint" Value="-1"/>
+
+		<Setter Property="CornerRadius" Value="7"/>
+		<Setter Property="BorderThickness" Value="3"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource BackgroundColor4}"/>
 
 		<Setter Property="Template">
 			<ControlTemplate>
