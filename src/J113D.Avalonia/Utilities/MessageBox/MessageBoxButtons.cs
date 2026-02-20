@@ -1,4 +1,4 @@
-﻿namespace J113D.Avalonia.MessageBox
+﻿namespace J113D.Avalonia.Utilities.MessageBox
 {
 	/// <summary>
 	/// Message box buttons

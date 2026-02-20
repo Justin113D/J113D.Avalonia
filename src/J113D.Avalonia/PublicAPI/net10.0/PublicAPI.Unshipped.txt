@@ -12,6 +12,9 @@ J113D.Avalonia.Converters.EmptyStringToNullConverter
 J113D.Avalonia.Converters.EmptyStringToNullConverter.Convert(object? value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 J113D.Avalonia.Converters.EmptyStringToNullConverter.ConvertBack(object? value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 J113D.Avalonia.Converters.EmptyStringToNullConverter.EmptyStringToNullConverter() -> void
+J113D.Avalonia.MessageBox.MessageBoxWindow
+J113D.Avalonia.MessageBox.MessageBoxWindow.MessageBoxWindow() -> void
+J113D.Avalonia.MessageBox.MessageBoxWindow.MessageBoxWindow(string! title, string! message, J113D.Avalonia.Utilities.MessageBox.MessageBoxButtons buttons, J113D.Avalonia.Utilities.MessageBox.MessageBoxIcon icon) -> void
 J113D.Avalonia.Utilities.Collections.ReadOnlyFilteredObservableCollection<TItem, TFilter>
 J113D.Avalonia.Utilities.Collections.ReadOnlyFilteredObservableCollection<TItem, TFilter>.FilterCallback.get -> System.Func<TItem, TFilter, bool>!
 J113D.Avalonia.Utilities.Collections.ReadOnlyFilteredObservableCollection<TItem, TFilter>.FilterCallback.set -> void
@@ -48,10 +51,31 @@ J113D.Avalonia.Utilities.IO.BaseSingleFileHandler.SaveNoDialog(System.Uri! filep
 J113D.Avalonia.Utilities.IO.IDataChangeState
 J113D.Avalonia.Utilities.IO.IDataChangeState.HasDataChanged.get -> bool
 J113D.Avalonia.Utilities.IO.IDataChangeState.StoreCurrentState(bool clearHistory) -> void
+J113D.Avalonia.Utilities.MessageBox.MessageBoxButtons
+J113D.Avalonia.Utilities.MessageBox.MessageBoxButtons.Ok = 0 -> J113D.Avalonia.Utilities.MessageBox.MessageBoxButtons
+J113D.Avalonia.Utilities.MessageBox.MessageBoxButtons.OkAbort = 3 -> J113D.Avalonia.Utilities.MessageBox.MessageBoxButtons
+J113D.Avalonia.Utilities.MessageBox.MessageBoxButtons.OkCancel = 2 -> J113D.Avalonia.Utilities.MessageBox.MessageBoxButtons
+J113D.Avalonia.Utilities.MessageBox.MessageBoxButtons.YesNo = 1 -> J113D.Avalonia.Utilities.MessageBox.MessageBoxButtons
+J113D.Avalonia.Utilities.MessageBox.MessageBoxButtons.YesNoAbort = 5 -> J113D.Avalonia.Utilities.MessageBox.MessageBoxButtons
+J113D.Avalonia.Utilities.MessageBox.MessageBoxButtons.YesNoCancel = 4 -> J113D.Avalonia.Utilities.MessageBox.MessageBoxButtons
+J113D.Avalonia.Utilities.MessageBox.MessageBoxExtensions
+J113D.Avalonia.Utilities.MessageBox.MessageBoxIcon
+J113D.Avalonia.Utilities.MessageBox.MessageBoxIcon.Error = 3 -> J113D.Avalonia.Utilities.MessageBox.MessageBoxIcon
+J113D.Avalonia.Utilities.MessageBox.MessageBoxIcon.Info = 4 -> J113D.Avalonia.Utilities.MessageBox.MessageBoxIcon
+J113D.Avalonia.Utilities.MessageBox.MessageBoxIcon.None = 0 -> J113D.Avalonia.Utilities.MessageBox.MessageBoxIcon
+J113D.Avalonia.Utilities.MessageBox.MessageBoxIcon.Question = 1 -> J113D.Avalonia.Utilities.MessageBox.MessageBoxIcon
+J113D.Avalonia.Utilities.MessageBox.MessageBoxIcon.Warning = 2 -> J113D.Avalonia.Utilities.MessageBox.MessageBoxIcon
+J113D.Avalonia.Utilities.MessageBox.MessageBoxResult
+J113D.Avalonia.Utilities.MessageBox.MessageBoxResult.Abort = 3 -> J113D.Avalonia.Utilities.MessageBox.MessageBoxResult
+J113D.Avalonia.Utilities.MessageBox.MessageBoxResult.Cancel = 4 -> J113D.Avalonia.Utilities.MessageBox.MessageBoxResult
+J113D.Avalonia.Utilities.MessageBox.MessageBoxResult.No = 2 -> J113D.Avalonia.Utilities.MessageBox.MessageBoxResult
+J113D.Avalonia.Utilities.MessageBox.MessageBoxResult.Ok = 0 -> J113D.Avalonia.Utilities.MessageBox.MessageBoxResult
+J113D.Avalonia.Utilities.MessageBox.MessageBoxResult.Yes = 1 -> J113D.Avalonia.Utilities.MessageBox.MessageBoxResult
 override J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.OnCloseConfirm() -> System.Threading.Tasks.Task<bool>!
 override sealed J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.HasUnsavedChanges.get -> bool
 override sealed J113D.Avalonia.Utilities.IO.BaseSingleFileHandler.HasUnsavedChanges.get -> bool
 override sealed J113D.Avalonia.Utilities.IO.BaseSingleFileHandler.OnCloseConfirm() -> System.Threading.Tasks.Task<bool>!
+static J113D.Avalonia.Utilities.MessageBox.MessageBoxExtensions.MessageBoxDialog(this Avalonia.Controls.Window! window, string! title, string! message, J113D.Avalonia.Utilities.MessageBox.MessageBoxButtons buttons, J113D.Avalonia.Utilities.MessageBox.MessageBoxIcon icon) -> System.Threading.Tasks.Task<J113D.Avalonia.Utilities.MessageBox.MessageBoxResult?>!
 virtual J113D.Avalonia.Utilities.Collections.ReadOnlyFilteredObservableCollection<TItem, TFilter>.CollectionChanged -> System.Collections.Specialized.NotifyCollectionChangedEventHandler?
 virtual J113D.Avalonia.Utilities.Collections.ReadOnlyFilteredObservableCollection<TItem, TFilter>.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs! args) -> void
 virtual J113D.Avalonia.Utilities.Collections.ReadOnlyFilteredObservableCollection<TItem, TFilter>.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs! args) -> void

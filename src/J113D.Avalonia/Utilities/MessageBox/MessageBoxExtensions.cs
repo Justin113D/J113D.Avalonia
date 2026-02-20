@@ -1,7 +1,8 @@
 ﻿using Avalonia.Controls;
+using J113D.Avalonia.MessageBox;
 using System.Threading.Tasks;
 
-namespace J113D.Avalonia.MessageBox
+namespace J113D.Avalonia.Utilities.MessageBox
 {
 	/// <summary>
 	/// Extension methods for message box dialogs

@@ -1,6 +1,6 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Platform.Storage;
-using J113D.Avalonia.MessageBox;
+using J113D.Avalonia.Utilities.MessageBox;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

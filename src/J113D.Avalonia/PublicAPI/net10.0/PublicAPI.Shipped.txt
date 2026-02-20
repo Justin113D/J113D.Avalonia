@@ -40,29 +40,6 @@ J113D.Avalonia.DataSelectors.TreeDataTemplateSelector.AvailableTemplates.get -> 
 J113D.Avalonia.DataSelectors.TreeDataTemplateSelector.ItemsSelector(object! item) -> Avalonia.Data.InstancedBinding?
 J113D.Avalonia.DataSelectors.TreeDataTemplateSelector.Match(object? data) -> bool
 J113D.Avalonia.DataSelectors.TreeDataTemplateSelector.TreeDataTemplateSelector() -> void
-J113D.Avalonia.MessageBox.MessageBoxButtons
-J113D.Avalonia.MessageBox.MessageBoxButtons.Ok = 0 -> J113D.Avalonia.MessageBox.MessageBoxButtons
-J113D.Avalonia.MessageBox.MessageBoxButtons.OkAbort = 3 -> J113D.Avalonia.MessageBox.MessageBoxButtons
-J113D.Avalonia.MessageBox.MessageBoxButtons.OkCancel = 2 -> J113D.Avalonia.MessageBox.MessageBoxButtons
-J113D.Avalonia.MessageBox.MessageBoxButtons.YesNo = 1 -> J113D.Avalonia.MessageBox.MessageBoxButtons
-J113D.Avalonia.MessageBox.MessageBoxButtons.YesNoAbort = 5 -> J113D.Avalonia.MessageBox.MessageBoxButtons
-J113D.Avalonia.MessageBox.MessageBoxButtons.YesNoCancel = 4 -> J113D.Avalonia.MessageBox.MessageBoxButtons
-J113D.Avalonia.MessageBox.MessageBoxExtensions
-J113D.Avalonia.MessageBox.MessageBoxIcon
-J113D.Avalonia.MessageBox.MessageBoxIcon.Error = 3 -> J113D.Avalonia.MessageBox.MessageBoxIcon
-J113D.Avalonia.MessageBox.MessageBoxIcon.Info = 4 -> J113D.Avalonia.MessageBox.MessageBoxIcon
-J113D.Avalonia.MessageBox.MessageBoxIcon.None = 0 -> J113D.Avalonia.MessageBox.MessageBoxIcon
-J113D.Avalonia.MessageBox.MessageBoxIcon.Question = 1 -> J113D.Avalonia.MessageBox.MessageBoxIcon
-J113D.Avalonia.MessageBox.MessageBoxIcon.Warning = 2 -> J113D.Avalonia.MessageBox.MessageBoxIcon
-J113D.Avalonia.MessageBox.MessageBoxResult
-J113D.Avalonia.MessageBox.MessageBoxResult.Abort = 3 -> J113D.Avalonia.MessageBox.MessageBoxResult
-J113D.Avalonia.MessageBox.MessageBoxResult.Cancel = 4 -> J113D.Avalonia.MessageBox.MessageBoxResult
-J113D.Avalonia.MessageBox.MessageBoxResult.No = 2 -> J113D.Avalonia.MessageBox.MessageBoxResult
-J113D.Avalonia.MessageBox.MessageBoxResult.Ok = 0 -> J113D.Avalonia.MessageBox.MessageBoxResult
-J113D.Avalonia.MessageBox.MessageBoxResult.Yes = 1 -> J113D.Avalonia.MessageBox.MessageBoxResult
-J113D.Avalonia.MessageBox.MessageBoxWindow
-J113D.Avalonia.MessageBox.MessageBoxWindow.MessageBoxWindow() -> void
-J113D.Avalonia.MessageBox.MessageBoxWindow.MessageBoxWindow(string! title, string! message, J113D.Avalonia.MessageBox.MessageBoxButtons buttons, J113D.Avalonia.MessageBox.MessageBoxIcon icon) -> void
 J113D.Avalonia.Theme.Accents.Colors
 J113D.Avalonia.Theme.J113DTheme
 J113D.Avalonia.Theme.J113DTheme.J113DTheme(System.IServiceProvider? sp = null) -> void
@@ -82,7 +59,6 @@ J113D.Avalonia.Utilities.Enum.EnumUtils
 J113D.Avalonia.Utilities.IO.BaseFileHandler
 J113D.Avalonia.Utilities.IO.BaseFileHandler.BaseFileHandler() -> void
 override J113D.Avalonia.Utilities.Enum.EnumDescription.ToString() -> string!
-static J113D.Avalonia.MessageBox.MessageBoxExtensions.MessageBoxDialog(this Avalonia.Controls.Window! window, string! title, string! message, J113D.Avalonia.MessageBox.MessageBoxButtons buttons, J113D.Avalonia.MessageBox.MessageBoxIcon icon) -> System.Threading.Tasks.Task<J113D.Avalonia.MessageBox.MessageBoxResult?>!
 static J113D.Avalonia.Theme.Accents.Colors.Blue.get -> Avalonia.Media.Color
 static J113D.Avalonia.Theme.Accents.Colors.Green.get -> Avalonia.Media.Color
 static J113D.Avalonia.Theme.Accents.Colors.Red.get -> Avalonia.Media.Color
