@@ -8,6 +8,17 @@ abstract J113D.Avalonia.Utilities.IO.BaseSingleFileHandler.DataChangeState.get -
 abstract J113D.Avalonia.Utilities.IO.BaseSingleFileHandler.InternalLoad(System.Uri! filePath) -> void
 abstract J113D.Avalonia.Utilities.IO.BaseSingleFileHandler.InternalReset() -> void
 abstract J113D.Avalonia.Utilities.IO.BaseSingleFileHandler.InternalSave(System.Uri! filePath) -> void
+J113D.Avalonia.Converters.EmptyStringToNullConverter
+J113D.Avalonia.Converters.EmptyStringToNullConverter.Convert(object? value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+J113D.Avalonia.Converters.EmptyStringToNullConverter.ConvertBack(object? value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+J113D.Avalonia.Converters.EmptyStringToNullConverter.EmptyStringToNullConverter() -> void
+J113D.Avalonia.Utilities.Collections.ReadOnlyFilteredObservableCollection<TItem, TFilter>
+J113D.Avalonia.Utilities.Collections.ReadOnlyFilteredObservableCollection<TItem, TFilter>.FilterCallback.get -> System.Func<TItem, TFilter, bool>!
+J113D.Avalonia.Utilities.Collections.ReadOnlyFilteredObservableCollection<TItem, TFilter>.FilterCallback.set -> void
+J113D.Avalonia.Utilities.Collections.ReadOnlyFilteredObservableCollection<TItem, TFilter>.FilterValue.get -> TFilter?
+J113D.Avalonia.Utilities.Collections.ReadOnlyFilteredObservableCollection<TItem, TFilter>.FilterValue.set -> void
+J113D.Avalonia.Utilities.Collections.ReadOnlyFilteredObservableCollection<TItem, TFilter>.ReadOnlyFilteredObservableCollection(System.Collections.ObjectModel.ObservableCollection<TItem>! collection, System.Func<TItem, TFilter, bool>! filterCallback) -> void
+J113D.Avalonia.Utilities.Collections.ReadOnlyFilteredObservableCollection<TItem, TFilter>.RefreshFilter() -> void
 J113D.Avalonia.Utilities.IO.BaseFileHandler.CloseConfirmation() -> System.Threading.Tasks.Task<bool>!
 J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>
 J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.Add(TFileData data, System.Uri? uri) -> void
@@ -41,4 +52,8 @@ override J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.OnCloseConf
 override sealed J113D.Avalonia.Utilities.IO.BaseMultiFileHandler<TFileData>.HasUnsavedChanges.get -> bool
 override sealed J113D.Avalonia.Utilities.IO.BaseSingleFileHandler.HasUnsavedChanges.get -> bool
 override sealed J113D.Avalonia.Utilities.IO.BaseSingleFileHandler.OnCloseConfirm() -> System.Threading.Tasks.Task<bool>!
+virtual J113D.Avalonia.Utilities.Collections.ReadOnlyFilteredObservableCollection<TItem, TFilter>.CollectionChanged -> System.Collections.Specialized.NotifyCollectionChangedEventHandler?
+virtual J113D.Avalonia.Utilities.Collections.ReadOnlyFilteredObservableCollection<TItem, TFilter>.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs! args) -> void
+virtual J113D.Avalonia.Utilities.Collections.ReadOnlyFilteredObservableCollection<TItem, TFilter>.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs! args) -> void
+virtual J113D.Avalonia.Utilities.Collections.ReadOnlyFilteredObservableCollection<TItem, TFilter>.PropertyChanged -> System.ComponentModel.PropertyChangedEventHandler?
 virtual J113D.Avalonia.Utilities.IO.BaseFileHandler.AskForCloseConfirmation.get -> bool
